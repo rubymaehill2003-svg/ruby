@@ -26,7 +26,7 @@ Prices are hard-coded – re-check them on the site before this sends.
 1. Header + nav (Offers, Home Fragrance, Best Sellers)
 2. Delivery Pass strips: the two real banners from Dropbox `Annual Delivery Pass Banners` (3.png, 4.png), used as-is, linking to https://valentte.com/delivery-membership/ (per the standing rule in `CLAUDE.md`)
 3. Two image-left banners: One for every room (bundle) / Keep every room scented (refills)
-4. Offer hero: Bundle & save + photo with "From £9.99 each" badge
+4. Offer hero: full-bleed autumn banner (Figma `21446:41`) – headline, subline and Shop & Save button set on the image. Photo of three diffusers generated in Higgsfield (gpt_image_2_5, reference-edit from real Valentte diffuser photos); labels checked by eye and read VALENTTE LONDON correctly
 5. Price ladder: The more you buy, the more you save (3 / 6 / 10) + photo with "Buy more save more" badge
 6. Review: Lesley, verified 5★ – exact wording from the review export
 7. Use case: A different scent for every room – hallway, living room, bedroom, bathroom
