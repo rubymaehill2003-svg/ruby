@@ -39,3 +39,11 @@ Prices are hard-coded – re-check them on the site before this sends.
 
 ## Bloomreach editor clean-up
 Ruby's visual-editor edits are kept. The editor clutter is removed: the `__visual-email-editor-body` body class, Grammarly attributes and tag, and the escaped `JINJA_ESCAPE` markers that broke the refer-a-friend link. The canonical Zac Footer is restored.
+
+## Scheduled send – Monday 12 Oct 2026, 07:30 (UK)
+Bloomreach scenario **"12/10/26 Newsletter"** (`6ac4d29dc325415410fae343`), built as a copy of the 07/10/26 Newsletter AM branch:
+planned trigger 07:30 BST → New/Active/Lapsing/Passive (or clicked in last 180 days; otherwise recently viewed & not purchased) → email has value → not Klaviyo suppressed → email consent → not Weekly/Monthly → no purchase in last 7 days → not in Welcome Flow → New vs Existing split.
+- `AM Email 12/10/26 - New Customers` → `send-12-10-new-customers.html` (all valentte.com links carry `?VNCFG=1`, as in the usual New Customers sends)
+- `AM Email 12/10/26 - Existing Customers` → `send-12-10-existing-customers.html` (plain links)
+- Frequency policy `unlimited-policy`, identity transfer `first_click`, consent category `email`.
+Created as a draft – it must be started in the Bloomreach UI to go live.
