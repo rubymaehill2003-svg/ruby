@@ -22,3 +22,7 @@ product photos (labels checked by eye – all read "VALENTTE LONDON"; the room-m
 Prices (live, 6 Oct 2026 – neither product currently discounted): Original Diffuser Gift Box – Citrus Grove £26.49;
 100ml Diffuser Refill – Sea Salt £17.99. No /shop-by-scent/citrus-grove/ page exists (404) so the citrus tile links to the gift box.
 All links checked live (200).
+
+Figma (page "ruby"): editable frames "Wed 14/10 AM · EDITABLE – New Customers" (21515:221) and
+"Wed 14/10 AM · EDITABLE – Existing Customers" (21515:309), placed to the right of Template 14. Live text + auto layout;
+header, Delivery Pass strip, FREE Gift banner and Zac Footer cloned from the Tue 13/10 PM editable frames.
