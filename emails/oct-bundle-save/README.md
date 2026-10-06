@@ -29,7 +29,7 @@ Prices are hard-coded – re-check them on the site before this sends.
    - Claim your FREE Diffuser – code NEWLD – diffuser photo, links to https://valentte.com/reed-diffuser-bundle/
    - Claim your FREE Candle – code FREECANDLE – lit candle photo, links to https://valentte.com/home-fragrance/candles/
 4. Offer hero: full-bleed autumn banner (Figma `21446:41`) – headline, subline and Shop & Save button set on the image. Photo of three diffusers generated in Higgsfield (gpt_image_2_5, reference-edit from real Valentte diffuser photos); labels checked by eye and read VALENTTE LONDON correctly
-5. Price ladder: The more you buy, the more you save (3 / 6 / 10). Ruby removed the "Buy more save more" photo in Bloomreach; an empty linked row is left in its place
+5. Price ladder: The more you buy, the more you save (3 / 6 / 10). the "Buy more save more" photo row is removed (Ruby's request)
 6. Review: Lesley, verified 5★ – exact wording from the review export
 7. Use case: A different scent for every room – hallway, living room, bedroom, bathroom
 8. Refills ("Top up the scents you love…" heading centred, per Ruby's edit in Bloomreach): Cardamom & Nutmeg and Lemongrass & Rosemary with was/now pricing
