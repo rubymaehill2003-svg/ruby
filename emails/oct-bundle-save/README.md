@@ -49,3 +49,4 @@ planned trigger 07:30 BST → New/Active/Lapsing/Passive (or clicked in last 180
 Created as a draft – it must be started in the Bloomreach UI to go live.
 - Delivery Pass strips are dynamic in both sends, using the same code as the 07/10/26 Newsletter: segmentation **"Annual Delivery Pass Active"** (`6abe3b67548525717f2931b7`, `has_delivery_pass` = true). Yes → "You've got free delivery!" (3.png, links to reed diffusers); No → "Want free delivery?" (4.png, links to /delivery-membership/). Each customer sees one strip only.
 - "SHOP BY SCENT" tile links to /all-scents/ (the /shop-by-scent/ page is password-protected on the live site). All other valentte.com links checked live on 6 Oct 2026.
+- Bottom banner: the black "Try it risk-free for 90 days" band is replaced by the Spiced Orange "New Scent Launch" banner (same image as the 07/10/26 PM Newsletter), linking to /shop-by-scent/spiced-orange/.
