@@ -47,3 +47,4 @@ planned trigger 07:30 BST → New/Active/Lapsing/Passive (or clicked in last 180
 - `AM Email 12/10/26 - Existing Customers` → `send-12-10-existing-customers.html` (plain links)
 - Frequency policy `unlimited-policy`, identity transfer `first_click`, consent category `email`.
 Created as a draft – it must be started in the Bloomreach UI to go live.
+- Delivery Pass strips are dynamic in both sends, using the same code as the 07/10/26 Newsletter: segmentation **"Annual Delivery Pass Active"** (`6abe3b67548525717f2931b7`, `has_delivery_pass` = true). Yes → "You've got free delivery!" (3.png, links to reed diffusers); No → "Want free delivery?" (4.png, links to /delivery-membership/). Each customer sees one strip only.

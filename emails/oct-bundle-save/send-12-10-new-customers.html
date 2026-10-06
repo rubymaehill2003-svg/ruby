@@ -41,9 +41,13 @@
   <tr><td align="center" style="padding:6px 24px 18px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td align="center" width="33%" style="padding:0 6px;"><a href="https://valentte.com/sale/?VNCFG=1" target="_blank" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#212121;text-decoration:none;white-space:nowrap;">Offers</a></td><td align="center" width="33%" style="padding:0 6px;"><a href="https://valentte.com/home-fragrance/natural-reed-diffusers/?VNCFG=1" target="_blank" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#212121;text-decoration:none;white-space:nowrap;">Home Fragrance</a></td><td align="center" width="33%" style="padding:0 6px;"><a href="https://valentte.com/best-sellers/?VNCFG=1" target="_blank" style="font-family:Inter,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#212121;text-decoration:none;white-space:nowrap;">Best Sellers</a></td></tr></tbody></table></td></tr>
 
   <!-- DELIVERY PASS STRIPS -->
-  <!-- Delivery Pass strips: real banners from Dropbox "Annual Delivery Pass Banners" (3.png, 4.png), used as-is -->
-  <tr><td style="padding:0 0 10px;font-size:0;line-height:0;"><a href="https://valentte.com/delivery-membership/?VNCFG=1" target="_blank" style="display:block;text-decoration:none;"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/03846ec0-1121-4b6e-b4d4-08d5ebad812b.png" width="600" height="60" alt="You’ve got free delivery! Your Unlimited Delivery Pass is live." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>
+  <!-- Delivery Pass strips: real banners from Dropbox "Annual Delivery Pass Banners" (3.png, 4.png), used as-is. Dynamic: segmentation "Annual Delivery Pass Active" Yes = 3.png, No = 4.png (same code as the 07/10/26 Newsletter) -->
+  {% if  segmentations['6abe3b67548525717f2931b7'] == 'Yes'  %}
+  <tr><td style="padding:0 0 10px;font-size:0;line-height:0;"><a href="https://valentte.com/home-fragrance/natural-reed-diffusers/?VNCFG=1" target="_blank" style="display:block;text-decoration:none;"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/03846ec0-1121-4b6e-b4d4-08d5ebad812b.png" width="600" height="60" alt="You’ve got free delivery! Your Unlimited Delivery Pass is live." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>
+  {% endif %}
+  {% if  segmentations['6abe3b67548525717f2931b7'] == 'No'  %}
   <tr><td style="padding:0 0 10px;font-size:0;line-height:0;"><a href="https://valentte.com/delivery-membership/?VNCFG=1" target="_blank" style="display:block;text-decoration:none;"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/fdf4a8dd-98c3-4d71-8452-4d06f079e2c7.png" width="600" height="60" alt="Want free delivery? Get it all year with our Unlimited Delivery Pass." style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a></td></tr>
+  {% endif %}
   <tr><td style="font-size:0;line-height:0;height:8px;">&nbsp;</td></tr>
 
   <!-- EVENT BANNERS -->
