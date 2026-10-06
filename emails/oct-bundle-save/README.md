@@ -25,12 +25,17 @@ Prices are hard-coded – re-check them on the site before this sends.
 ## Sections (template order)
 1. Header + nav (Offers, Home Fragrance, Best Sellers)
 2. Delivery Pass strips: the two real banners from Dropbox `Annual Delivery Pass Banners` (3.png, 4.png), used as-is, linking to https://valentte.com/delivery-membership/ (per the standing rule in `CLAUDE.md`)
-3. Two image-left banners: One for every room (bundle) / Keep every room scented (refills)
+3. Two "FREE Gift Alert" banners (Ruby's edit in Bloomreach), each with a white "Claim Your FREE Gift→" button:
+   - Claim your FREE Diffuser – code NEWLD – diffuser photo, links to https://valentte.com/reed-diffuser-bundle/
+   - Claim your FREE Candle – code FREECANDLE – lit candle photo, links to https://valentte.com/home-fragrance/candles/
 4. Offer hero: full-bleed autumn banner (Figma `21446:41`) – headline, subline and Shop & Save button set on the image. Photo of three diffusers generated in Higgsfield (gpt_image_2_5, reference-edit from real Valentte diffuser photos); labels checked by eye and read VALENTTE LONDON correctly
-5. Price ladder: The more you buy, the more you save (3 / 6 / 10) + photo with "Buy more save more" badge
+5. Price ladder: The more you buy, the more you save (3 / 6 / 10). Ruby removed the "Buy more save more" photo in Bloomreach; an empty linked row is left in its place
 6. Review: Lesley, verified 5★ – exact wording from the review export
 7. Use case: A different scent for every room – hallway, living room, bedroom, bathroom
 8. Refills ("Top up the scents you love…" heading centred, per Ruby's edit in Bloomreach): Cardamom & Nutmeg and Lemongrass & Rosemary with was/now pricing
 9. Dark band: Try it risk-free for 90 days
 10. You may also like: Offers, Refills, Shop by Scent
 11. Zac Footer
+
+## Bloomreach editor clean-up
+Ruby's visual-editor edits are kept. The editor clutter is removed: the `__visual-email-editor-body` body class, Grammarly attributes and tag, and the escaped `JINJA_ESCAPE` markers that broke the refer-a-friend link. The canonical Zac Footer is restored.
