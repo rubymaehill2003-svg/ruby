@@ -26,3 +26,7 @@ All links checked live (200).
 Figma (page "ruby"): editable frames "Wed 14/10 AM · EDITABLE – New Customers" (21515:221) and
 "Wed 14/10 AM · EDITABLE – Existing Customers" (21515:309), placed to the right of Template 14. Live text + auto layout;
 header, Delivery Pass strip, FREE Gift banner and Zac Footer cloned from the Tue 13/10 PM editable frames.
+Fully editable pass (7 Oct): grid photos are clean images with a separate white vector wave on top; the two wave strips are
+vector shapes; each offer image is a background photo + rounded product photo layer (drop shadow); the Zac Footer is rebuilt
+with live text, and only the icons / payment logos / social icons remain as crops of the real footer image (never redrawn).
+The Delivery Pass strips stay as the real Dropbox banner images (permanent rule).
