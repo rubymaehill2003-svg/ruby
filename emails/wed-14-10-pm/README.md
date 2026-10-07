@@ -19,7 +19,7 @@ support details.** (file `3HcXPTDNPcYm2CohEsdFjm`, page "ruby", node `21615:259`
 6. Today's offers (side by side on desktop and mobile):
    - Customer Favourites Mini Mist Box of 4 – was £13.49, now £7.99 (41% off)
    - 100ml Diffuser Refill – Wild Mint & Sicilian Lemon – was £17.99, now £9.99 (44% off)
-7. Customer support card – 08000 869 311, support@valentte.com, 7 day customer care
+7. Snow & Sage – New Scent Launch banner (Dropbox image, used as-is) → /shop-by-scent/snow-sage/ (replaced the customer support card)
 8. Zac Footer
 
 Prices are from the Bloomreach product catalogue (7 Oct 2026) – re-check before this sends.
