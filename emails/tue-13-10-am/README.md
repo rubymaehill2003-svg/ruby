@@ -9,3 +9,4 @@ scenario (nodes 1456 New / 1457 Existing) and the matching email campaigns.
 - New Customers links carry `?VNCFG=1`.
 - Mobile: sections keep the same side-by-side layout as desktop (columns use percentage widths;
   nothing stacks), images capped to the screen width.
+- Price ladder ("The more you buy, the more you save" intro line + the 3 / 6 / 10 diffuser tiles) links to the reed diffuser bundle page.
