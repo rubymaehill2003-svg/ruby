@@ -24,3 +24,9 @@ New & Existing Customer Split in the daily newsletter scenarios):
 - The other FREE Gift banner (the code without "NEW", e.g. `FREECANDLE`) goes **only** in the
   **Existing Customers** version.
 - Never show both FREE Gift banners in the same version.
+
+## Frequency policy (permanent rule)
+
+Every email uploaded into Bloomreach – in any scenario (newsletters, test scenarios, flows) or as an email campaign – must
+have **Unlimited Policy** selected as its frequency policy (`frequency_policy: "unlimited-policy"` on the send-email node).
+Check it on every create/update, and re-check after any copy or clone.
