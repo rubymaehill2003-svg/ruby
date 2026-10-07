@@ -42,3 +42,5 @@ Both emails now match the edited New Customers Figma frame (Existing frame rebui
 - "Natural scents for your whole home / Reed Diffuser Bundle Offer" reviews: the two draft quotes weren't in the review export, so
   replaced with genuine verified 5★ reviews (Elaine F. and Ryan, Ready, Set, Scent Pack). CTA "Buy your Bundle Here →".
 - Stats: 47% OFF / 350k+ / 20+ Scents to choose. Subject: "Bundle & save up to 47% on reed diffusers 🍂".
+
+- Wednesday's picks: verified-review cards (Angela Wright – Citrus Grove Reed Diffuser; Carole Dowley – 100ml Diffuser Refill – Sea Salt; exact 5★ verified reviews from the review export) with pricing (Citrus Grove gift box £26.49 → £18.99; Sea Salt refill £17.99 → £10.49) and Shop Now buttons; side by side on mobile.
