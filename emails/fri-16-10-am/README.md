@@ -6,7 +6,7 @@ Valentte reviews. Editable frames: `21750:198` New Customers, `21750:302` Existi
 | Item | Value |
 |---|---|
 | Subject | Don’t take our word for it… 🏡 Bundle & save up to 47% |
-| Preheader | Real reviews, real homes – plus bundle & save up to 47% on reed diffusers and offers from £7.99. |
+| Preheader | Real reviews, real homes – plus bundle & save up to 47% on reed diffusers and offers from £10.49. |
 | Frequency policy | Unlimited Policy |
 
 ## Sections
@@ -15,8 +15,9 @@ Valentte reviews. Editable frames: `21750:198` New Customers, `21750:302` Existi
 3. Hero (bundle): Higgsfield restyle of five real Valentte reed diffusers in a cosy hallway; card "Bundle & save up to 47% – Don’t take our word for it." → bundle
 4. Review card – Reed Diffuser Bundle – Vicki (Festive Spice Reed Diffuser): “The compliments I get for the smell of my home!!” → bundle
 5. **Today’s offers** – product-focused, two cards side by side (stay side by side on mobile), each linking to its own product:
-   - Original Diffuser Gift Box – Pure Lavender: 28% OFF badge, £26.49 → £18.99, Shop now
-   - Customer Favourites Mini Mist Box of 4: 41% OFF badge, £13.49 → £7.99, Shop now
+   - Original Diffuser Gift Box – White Neroli & Lemon: 28% OFF badge, £26.49 → £18.99, Shop now
+   - 100ml Diffuser Refill – Patchouli & Eucalyptus: 42% OFF badge, £17.99 → £10.49, Shop now
+   (Offer prices as Ruby confirmed – the catalogue showed full price on 8 Oct. Product images: Higgsfield cosy restyles of the official product photos, labels unchanged.)
 6. Feature banner – New Launch: Crushed Candy Cane (from the Mon 12/10 Evening email) → `/shop-by-scent/crushed-candy-cane/`, with a 24px spacer
 7. Zac footer
 
