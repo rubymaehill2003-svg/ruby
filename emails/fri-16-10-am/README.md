@@ -17,9 +17,10 @@ Valentte reviews. Editable frames: `21750:198` New Customers, `21750:302` Existi
 5. **Today’s offers** – product-focused, two cards side by side (stay side by side on mobile), each linking to its own product:
    - Original Diffuser Gift Box – Pure Lavender: 28% OFF badge, £26.49 → £18.99, Shop now
    - Customer Favourites Mini Mist Box of 4: 41% OFF badge, £13.49 → £7.99, Shop now
-6. Closing line + Shop bundle & save
-7. Feature banner – New Launch: Crushed Candy Cane (from the Mon 12/10 Evening email) → `/shop-by-scent/crushed-candy-cane/`, with a 24px spacer
-8. Zac footer
+6. Feature banner – New Launch: Crushed Candy Cane (from the Mon 12/10 Evening email) → `/shop-by-scent/crushed-candy-cane/`, with a 24px spacer
+7. Zac footer
 
-Body is sliced 1:1 from the Figma frame (identical for both versions); only the gift banner differs. Prices from the catalogue (8 Oct 2026).
+Latest Figma edits (Ruby): closing line + "Shop bundle & save" removed, hero copy now "Mix & match reed diffusers from £9.99 each – 3 for £35.97.", second hero inset removed. The Existing frame has its own headline spacing, so the hero card and Candy Cane slices are per version.
+
+Body is sliced 1:1 from each Figma frame; the gift banner, hero card and Candy Cane slices are per version. Prices from the catalogue (8 Oct 2026).
 Avatars use the reviewer’s initial – no stock faces. New Customers links carry `?VNCFG=1`.
