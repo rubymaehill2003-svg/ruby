@@ -11,6 +11,11 @@ Editable frames: `21722:193` New Customers, `21722:279` Existing Customers (file
 | Preheader | Plus today’s offers: Bergamot & Lemon refill now £10.49 and the Mini Mist Box of 4 now £7.99. |
 | Frequency policy | Unlimited Policy |
 
+## Build
+The body (top band → Today’s Offers card) is sliced 1:1 from each Figma frame so the email matches the template exactly;
+header, nav, Delivery Pass strips, gift banner and footer stay live. The product row is split into two halves so each
+product links to its own page. Re-export and re-slice after any Figma edit.
+
 ## Sections
 1. Header, nav, dynamic Delivery Pass strips (real banner images)
 2. FREE Gift banner – `NEWNC` Neroli candle in New Customers only; Spa-Candle "Today only FREE candle" in Existing Customers only
