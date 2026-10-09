@@ -30,3 +30,17 @@ New & Existing Customer Split in the daily newsletter scenarios):
 Every email uploaded into Bloomreach – in any scenario (newsletters, test scenarios, flows) or as an email campaign – must
 have **Unlimited Policy** selected as its frequency policy (`frequency_policy: "unlimited-policy"` on the send-email node).
 Check it on every create/update, and re-check after any copy or clone.
+
+## Transfer identity = First click (permanent rule)
+
+Every email created or updated in Bloomreach Engagement for Ruby (Valentte Prod project) – standalone email campaigns
+**and** every send-email step inside scenarios/flows – must have **Transfer identity** set to **First click**
+(API field `transfer_user_identity: "first_click"`), never Disabled.
+
+1. Always include `"transfer_user_identity": "first_click"` in the payload on every create/update.
+2. After every upload, re-fetch the email and check what the setting actually reads.
+3. Known limitation (tested 9 Oct 2026): the API accepts this field but often doesn't save it, so it may still read
+   `disabled`. When that happens, tell Ruby the email's name and remind her to switch "Transfer identity" to
+   "First click" in that email's settings in Bloomreach before it sends. Never report an email as finished without
+   that reminder.
+4. Don't change any other emails just to apply this rule.
