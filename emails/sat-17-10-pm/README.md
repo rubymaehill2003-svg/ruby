@@ -18,3 +18,7 @@ Built from Figma template `21802:1073` (arched hero, "101" use-case grid, big pr
 6. Zac footer
 
 Body sliced 1:1 from the Figma frames (gift banner per version, body shared). New Customers links carry `?VNCFG=1`.
+
+## Bloomreach
+- Email campaigns (draft): New Customers `6ac89e58b8182392c77aba8d`, Existing Customers `6ac89eafe9555d1b8d1d3d26`
+- Test scenario "Ruby test" `6ac4b5c24b5e828c4eb3e537`: nodes 81 (New) / 84 (Existing), each trigger → "Ruby" condition → email
