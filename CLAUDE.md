@@ -44,3 +44,6 @@ Every email created or updated in Bloomreach Engagement for Ruby (Valentte Prod 
    "First click" in that email's settings in Bloomreach before it sends. Never report an email as finished without
    that reminder.
 4. Don't change any other emails just to apply this rule.
+5. The API read-back is also unreliable for this field: after Ruby switches it to First click in the Bloomreach UI, the API
+   can still report `disabled` (seen 9 Oct 2026 on six campaigns). Once Ruby confirms she has switched it in the UI,
+   treat that email as done – don't keep re-flagging it.
