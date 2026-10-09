@@ -21,3 +21,7 @@ Built from the "Sunday 18th October PM – B&W Template" frame (`21839:198`, a w
 8. Zac footer
 
 Body sliced 1:1 from each Figma frame (per-version slices for the gift banner, "Why Bundle?" and product rows). New Customers links carry `?VNCFG=1`.
+
+## Bloomreach
+- Email campaigns (draft): New Customers `6ac8d803c02bc4fb6b796ee2`, Existing Customers `6ac8d8608ea92e28c2bd5b6a`
+- Test scenario "Ruby test" `6ac4b5c24b5e828c4eb3e537`: nodes 93 (New) / 96 (Existing), each trigger → "Ruby" condition → email
