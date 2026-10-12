@@ -47,3 +47,16 @@ Every email created or updated in Bloomreach Engagement for Ruby (Valentte Prod 
 5. The API read-back is also unreliable for this field: after Ruby switches it to First click in the Bloomreach UI, the API
    can still report `disabled` (seen 9 Oct 2026 on six campaigns). Once Ruby confirms she has switched it in the UI,
    treat that email as done – don't keep re-flagging it.
+
+## Subject lines & preview text (permanent rule)
+
+For every email (campaigns, scenario/flow emails, A/B variants):
+
+- **Sentence case** for both the subject line and the preview text (preheader) – capitalise only the first word and
+  proper nouns/product names (e.g. "Lemongrass & Rosemary"), never Title Case.
+- The word **free** is always written in caps: **FREE** (in subject lines and preview text).
+- Every subject line includes **one relevant emoji**.
+- The preview text must **not repeat** what the subject line already says – it should add something new.
+- Across subject + preview, aim for a **mix of offer-driven and curiosity-led** copy (e.g. one carries the offer, the
+  other teases/intrigues).
+- Check this on every create/update before uploading to Bloomreach.
