@@ -60,3 +60,26 @@ For every email (campaigns, scenario/flow emails, A/B variants):
 - Across subject + preview, aim for a **mix of offer-driven and curiosity-led** copy (e.g. one carries the offer, the
   other teases/intrigues).
 - Check this on every create/update before uploading to Bloomreach.
+
+## Dark Mode compatibility (permanent rule)
+
+Every email must keep its intended Light Mode appearance in Dark Mode (desktop and mobile) as closely as each email
+client allows – Dark Mode must not change, invert or distort the design.
+
+- Text colours, background colours and brand colours stay the same as the Light Mode design wherever supported.
+- Images, logos, banners and product imagery keep their original colours (no inversion, no transparent-background
+  logos/text that disappear on dark backgrounds – give them a solid background baked into the image).
+- Buttons/CTAs keep their intended fill and text colours and contrast; no text may become invisible or hard to read.
+
+How to apply it in the HTML (check on every build/update):
+1. `<meta name="color-scheme" content="light only">` and `<meta name="supported-color-schemes" content="light only">`,
+   plus `:root { color-scheme: light only; supported-color-schemes: light only; }` in the `<style>` block.
+2. Set explicit `bgcolor` attributes **and** inline `background-color` on body, wrapper tables and every coloured cell;
+   set an explicit inline `color` on every text element (never rely on defaults).
+3. Outlook.com/Office 365 overrides: add `[data-ogsc]` (text) and `[data-ogsb]` (background) rules that re-assert the
+   light colours for key classes (body, text, buttons).
+4. Text-heavy sections that must never invert (e.g. hero headlines, offer badges) are baked into images, as already done
+   for sliced sections; any PNG with transparency must be flattened onto its intended background colour.
+5. Bulletproof buttons: background colour set on the `<td>` (bgcolor + inline style) and the `<a>`, with explicit text colour.
+6. Known limits to tell Ruby about when relevant: Gmail iOS/Android apps and Outlook apps can still force partial or full
+   colour inversion that no code can fully prevent – images are never inverted, so keep critical text inside images.
