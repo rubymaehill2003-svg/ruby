@@ -19,3 +19,12 @@ Applies to every Valentte email built or edited: campaigns, newsletters, scenari
 3. **Footer** – the standard sliced Valentte footer ("FOOTER: Top5 #7 Higgsfield background"): refer-a-friend, secure checkout/payment icons, phone + email, Facebook/TikTok/Instagram, contact preferences + unsubscribe (`{{ email.unsubscribe }}`), not-monitored note, address, View in Browser (`{{ email.view }}`). Reference copy: the 16/10/26 Newsletter PM email (scenario `6acdd02e1842e1f9598199e6`, node 35).
 
 Before finishing any email, check all three are present (logo row + nav, both delivery pass `{% if %}` blocks, footer with unsubscribe) and say so in the summary.
+
+## Logo: always use the "Aiden logo"
+
+Whenever an email needs the logo (header/topper logo row, or anywhere else a logo appears), use the **Aiden logo** – Figma frame **"Aiden Header"** (node `22470:6`, page "Valentte PPF", file `3HcXPTDNPcYm2CohEsdFjm`). Clone that frame; don't rebuild or swap in another logo.
+
+- Spec: 600 × 86 white frame, vertical auto-layout, centred, padding 26 top / 14 bottom, 2px gap.
+- "VALENTTE" – Constantia Regular 26px, letter-spacing 2px, `#212121`.
+- "LONDON" – Constantia Regular 10px, letter-spacing 0, `#595959`.
+- HTML equivalent (links to https://valentte.com/ with `display:block`): same text and sizes, `font-family:Constantia,Georgia,'Times New Roman',serif`.
