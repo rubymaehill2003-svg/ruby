@@ -3,6 +3,8 @@
 18 coded emails: Tue 1, Wed 2, Thu 3 Dec × AM/PM × hero versions A (offer & value), B (curiosity), C (gamified).
 Everything except the hero is identical across A/B/C.
 
+**v2 (each day its own look):** Tue 1 Dec = editorial (Alessi-inspired: cream/red, italic marquee, split grid) · Wed 2 Dec = deep red ornaments (Cardo italic, bauble photo frames, ticket code, arches) · Thu 3 Dec = collage & wish list (photo grid, polaroids, big FREE, sale tags). Render sources: `_build/gen2.py`, `_build/emails2.py`.
+
 Section order: 12 Days thin banner → Aiden Header + nav → free gift banner → hero (A/B/C) → gift box offer of the day → 3 more offers (Retail Price Sheet) → social proof → free gift reminder → Zac Footer.
 
 | Day | Free gift (Email Free Gift Tracking sheet) | Gift box (Retail Price Sheet) | Other offers |
