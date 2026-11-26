@@ -160,7 +160,7 @@ def deals(day, bg, panel, ink, acc, hot, hot_fg, head_css, sub_css, today_line, 
 {f'<div style="width:96px;height:96px;flex:none;background:#fff url({PR(thumb)}) center/cover no-repeat;border:1.5px solid {hot}"></div>' if thumb else ''}
 <div style="flex:1"><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{hot}">DAY {day} · TODAY ONLY</div>
 <div style="font-size:19px;font-weight:800;line-height:1.25;color:#2A1A17;margin-top:4px">{today_line}</div>{price}
-<div style="font-size:12.5px;color:#5c4c47;margin-top:6px">{nxt}</div>{f'<div style="margin-top:12px">{btn}</div>' if stack else ''}</div>
+{f'<div style="margin-top:12px">{btn}</div>' if stack else ''}</div>
 {'' if stack else f'<div style="flex:none">{btn}</div>'}</div></div>'''
 
 pages['deals_d1'] = deals(1, R1, C1, C1, 'rgba(242,235,223,.9)', RED1, '#fff',
@@ -229,7 +229,7 @@ def deals1PM():
 <div style="background:{CRN};padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;position:relative">
 <div><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{RED1}">TONIGHT ONLY</div>
 <div style="font-size:17px;font-weight:800;line-height:1.3;color:#2A1A17;margin-top:3px">Diffuser bundles from £9.99 each + a FREE candle with code FREEFLAME</div>
-<div style="font-size:12px;color:#5c4c47;margin-top:5px">Day 2 unlocks tomorrow at 7:30am.</div></div>{btnN("Shop tonight’s deal")}</div></div>'''
+</div>{btnN("Shop tonight’s deal")}</div></div>'''
 
 pages['bundle_d1_PM'] = bundle1PM()
 pages['box_d1_PM'] = box1PM('Jasmine &amp; Rosewood')
@@ -320,7 +320,7 @@ def deals1PM_L():
 <div style="background:#fff;border:1.5px solid {L_TXT};padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;position:relative">
 <div><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{RED1}">TONIGHT ONLY</div>
 <div style="font-size:17px;font-weight:800;line-height:1.3;color:#2A1A17;margin-top:3px">Diffuser bundles from £9.99 each + a FREE candle with code FREEFLAME</div>
-<div style="font-size:12px;color:#5c4c47;margin-top:5px">Day 2 unlocks tomorrow at 7:30am.</div></div>{btnN("Shop tonight’s deal")}</div></div>'''
+</div>{btnN("Shop tonight’s deal")}</div></div>'''
 
 def heroL_A():
     return f'''<div style="background:{L_BG}">
