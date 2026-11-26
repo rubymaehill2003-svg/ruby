@@ -82,35 +82,35 @@ def reminder(day, slot):
 </td></tr></table></td></tr>'''
 
 # ---- Tuesday PM "night" variant: own palette + list-style tiles, quote card, gold ticket
-TH_N = dict(name='Tuesday night · night green & gold', page='#08180F', card='#0F2A1D')
+TH_N = dict(name='Tuesday evening · light sage & cream', page='#DCE9D8', card='#EAF2E7')
 def tiles_night():
     rows=''
     for name, url, now, was, pct, k in DAYS[1]['tiles']:
-        rows += f'''<tr><td style="padding:0 0 14px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#173D2A;border:1px solid #D6B46E;"><tr>
+        rows += f'''<tr><td style="padding:0 0 14px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border:1.5px solid #1E4D36;"><tr>
 <td width="130" style="width:130px;padding:0;">{a(url, f'<img src="{img(k)}" width="130" alt="{name} – now £{now}" style="display:block;width:130px;height:130px;border:0;">')}</td>
-<td style="padding:14px 18px;font-family:Inter,Arial,sans-serif;color:#F3EBDD;">
+<td style="padding:14px 18px;font-family:Inter,Arial,sans-serif;color:#1E4D36;">
 <span style="display:inline-block;background:#B3202A;color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;">SAVE {pct}%</span>
 <div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:19px;line-height:23px;padding:6px 0 4px;">{name}</div>
-<div style="font-size:14px;"><b style="color:#D6B46E;font-size:17px;">£{now}</b> <span style="opacity:.6;text-decoration:line-through;">£{was}</span></div></td>
-<td width="120" align="right" style="padding:0 16px 0 0;">{a(url, '<span style="display:inline-block;border:1.5px solid #D6B46E;color:#D6B46E;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;padding:9px 12px;white-space:nowrap;">SHOP NOW</span>')}</td>
+<div style="font-size:14px;"><b style="color:#B3202A;font-size:17px;">£{now}</b> <span style="opacity:.6;text-decoration:line-through;">£{was}</span></div></td>
+<td width="120" align="right" style="padding:0 16px 0 0;">{a(url, '<span style="display:inline-block;background:#1E4D36;border:1.5px solid #1E4D36;color:#ffffff;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;padding:9px 12px;white-space:nowrap;">SHOP NOW</span>')}</td>
 </tr></table></td></tr>'''
-    return f'''<tr><td style="padding:34px 26px 22px;background:#0F2A1D;">
-<div style="font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:#D6B46E;text-align:center;">ALSO ON OFFER TONIGHT</div>
-<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:32px;line-height:38px;color:#F3EBDD;text-align:center;padding:6px 0 20px;">Small treats, big savings</div>
+    return f'''<tr><td style="padding:34px 26px 22px;background:#EAF2E7;">
+<div style="font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:#B3202A;text-align:center;">ALSO ON OFFER TONIGHT</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:32px;line-height:38px;color:#1E4D36;text-align:center;padding:6px 0 20px;">Small treats, big savings</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>'''
 def proof_night():
-    return '''<tr><td style="padding:10px 26px 30px;background:#0F2A1D;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F3EBDD;"><tr><td align="center" style="padding:26px 30px 24px;">
-<div style="font-family:Cardo,Georgia,serif;font-size:60px;line-height:40px;color:#D6B46E;">&ldquo;</div>
-<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:26px;line-height:32px;color:#0F2A1D;padding:4px 0 8px;">Everyone who visits asks what it is.</div>
-<div style="font-family:Inter,Arial,sans-serif;font-size:18px;letter-spacing:4px;color:#B3202A;">★★★★★</div>
-<div style="font-family:Inter,Arial,sans-serif;font-size:12.5px;line-height:19px;color:#4a4a4a;padding-top:6px;">350,000+ five-star reviews &nbsp;·&nbsp; Over 1 million happy customers &nbsp;·&nbsp; 1 sold every 18 seconds</div>
+    return '''<tr><td style="padding:10px 26px 30px;background:#EAF2E7;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#1E4D36;"><tr><td align="center" style="padding:26px 30px 24px;">
+<div style="font-family:Cardo,Georgia,serif;font-size:60px;line-height:40px;color:#E2C27A;">&ldquo;</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:26px;line-height:32px;color:#ffffff;padding:4px 0 8px;">Everyone who visits asks what it is.</div>
+<div style="font-family:Inter,Arial,sans-serif;font-size:18px;letter-spacing:4px;color:#E2C27A;">★★★★★</div>
+<div style="font-family:Inter,Arial,sans-serif;font-size:12.5px;line-height:19px;color:#E7EFE6;padding-top:6px;">350,000+ five-star reviews &nbsp;·&nbsp; Over 1 million happy customers &nbsp;·&nbsp; 1 sold every 18 seconds</div>
 </td></tr></table></td></tr>'''
 def reminder_night():
-    return '''<tr><td align="center" style="padding:0 30px 30px;background:#0F2A1D;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border:1.5px dashed #D6B46E;background:#173D2A;"><tr><td align="center" style="padding:18px 30px;">
-<div style="font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#D6B46E;">FINAL HOURS · ENDS TONIGHT</div>
-<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:24px;line-height:30px;color:#F3EBDD;padding:6px 0 4px;">Your FREE candle is waiting</div>
-<div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#F3EBDD;">Use code <b style="letter-spacing:1.5px;color:#D6B46E;">FREEFLAME</b> at checkout.</div>
+    return '''<tr><td align="center" style="padding:0 30px 30px;background:#EAF2E7;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border:2px dashed #B3202A;background:#FFFFFF;"><tr><td align="center" style="padding:18px 30px;">
+<div style="font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#B3202A;">FINAL HOURS · ENDS TONIGHT</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:24px;line-height:30px;color:#1E4D36;padding:6px 0 4px;">Your FREE candle is waiting</div>
+<div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#3b4a40;">Use code <b style="letter-spacing:1.5px;color:#B3202A;">FREEFLAME</b> at checkout.</div>
 </td></tr></table></td></tr>'''
 
 def email(day, slot, ver):
