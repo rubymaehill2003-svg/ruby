@@ -85,9 +85,9 @@ def email(day, slot, ver):
     d = DAYS[day]; subj, subjB, pre = COPY[(day, slot)]; t = TH[day]
     boxname, boxurl = d['box']
     rows = [
-      f'<!-- 12 DAYS OF CHRISTMAS thin banner · Day {day} theme: {t["name"]} -->',
-      imgrow(img(f'strip_d{day}'), HOME, f'The 12 Days of Christmas – Day {day} of 12'),
       HEADER,
+      f'<!-- 12 DAYS OF CHRISTMAS thin banner (sits on top of the free gift banner) · Day {day} theme: {t["name"]} -->',
+      imgrow(img(f'strip_d{day}'), HOME, f'The 12 Days of Christmas – Day {day} of 12'),
       '<!-- FREE GIFT banner -->',
       imgrow(img(f'gift_d{day}_{slot}'), BUNDLE, f"FREE {d['item']} with every order – use code {d['code']}. Claim your FREE gift"),
       f'<!-- HERO · Version {ver} -->',
@@ -96,6 +96,8 @@ def email(day, slot, ver):
       imgrow(img(f'bundle_d{day}'), BUNDLE, 'Bundle & save – 3 diffusers save £21, 6 diffusers save £48, 10 diffusers save £89.91, from £9.99 each. Build your bundle', bg=t['card']),
       '<!-- SECONDARY OFFER: GIFT BOX DEAL OF THE DAY -->',
       imgrow(img(f'box_d{day}'), boxurl, f'Also today: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
+      '<!-- 12 DAYS. 12 DEALS. – a new deal every day for the first 12 days of December -->',
+      imgrow(img(f'deals_d{day}'), BUNDLE, f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day {day} – today only: diffuser bundles from £9.99 each plus a FREE {d['item']} with code {d['code']}. Shop today’s deal", bg=t['card']),
       '<!-- MORE OFFERS (retail price sheet) -->', tiles(day),
       '<!-- SOCIAL PROOF -->', proof(day),
       '<!-- FREE GIFT reminder -->', reminder(day, slot),

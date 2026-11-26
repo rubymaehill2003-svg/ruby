@@ -135,3 +135,39 @@ for slot in ('AM', 'PM'):
     pages[f'gift_d1_{slot}'] = gift_orn(1, slot, 'candle', 'FREEFLAME', 'candle_only.jpg', '50% 45%', 'cover', '#2E6E4D', '#1E4D36', '#0E2619', 11 + (slot == 'PM'))
     pages[f'gift_d2_{slot}'] = gift_orn(2, slot, 'boxed diffuser', 'FREEDIFF', 'p49_diffbox.jpg', '40% 58%', '300%', K2b, K2, '#2A0710', 22 + (slot == 'PM'))
     pages[f'gift_d3_{slot}'] = gift_orn(3, slot, 'candle', 'FREEFLAME', 'candle_only.jpg', '50% 45%', 'cover', '#C83440', '#B01E2A', '#5E0C14', 33 + (slot == 'PM'))
+
+# ---------------- "12 Days. 12 Deals." salesy section (per day, own colours)
+def deals(day, bg, panel, ink, acc, hot, hot_fg, head_css, sub_css, today_line, btn):
+    cells = ''
+    for n in range(1, 13):
+        if n < day:
+            cells += f'''<div style="height:84px;border:1.5px solid {acc};opacity:.55;display:flex;flex-direction:column;align-items:center;justify-content:center;color:{ink}">
+<div style="font-size:26px;font-weight:900;font-style:italic;text-decoration:line-through">{n}</div><div style="font-size:8.5px;font-weight:800;letter-spacing:1.2px">DEAL ENDED</div></div>'''
+        elif n == day:
+            cells += f'''<div style="height:84px;background:{hot};color:{hot_fg};display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 3px {panel},0 0 0 5px {hot};transform:scale(1.08)">
+<div style="font-size:32px;font-weight:900;font-style:italic;line-height:1">{n}</div><div style="font-size:8.5px;font-weight:800;letter-spacing:1.2px">OPEN NOW</div></div>'''
+        else:
+            cells += f'''<div style="height:84px;border:1.5px dashed {acc};display:flex;flex-direction:column;align-items:center;justify-content:center;color:{ink}">
+<div style="font-size:26px;font-weight:900;font-style:italic;opacity:.9">{n}</div><div style="font-size:8.5px;font-weight:800;letter-spacing:1.2px;opacity:.75">🔒 {n} DEC</div></div>'''
+    nxt = f'Come back tomorrow – Day {day+1}’s deal unlocks at 7:30am.'
+    return f'''<div style="background:{bg};padding:34px 28px 34px;position:relative;overflow:hidden">{snow(50,600+day,'rgba(255,255,255,.18)',2,700)}
+<div style="text-align:center;position:relative">
+<div style="display:inline-block;background:{hot};color:{hot_fg};font-size:11px;font-weight:800;letter-spacing:2.5px;padding:6px 14px">THE 12 DAYS OF CHRISTMAS</div>
+<div style="{head_css};color:{ink};margin:14px 0 8px">12 days. 12 deals.</div>
+<div style="{sub_css};color:{ink};opacity:.92">A brand-new deal drops every single day for the first 12 days of December – and each one is gone in 24 hours.</div></div>
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:24px 4px 22px;position:relative">{cells}</div>
+<div style="background:{panel};padding:20px 22px;position:relative;display:flex;gap:18px;align-items:center;justify-content:space-between">
+<div><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{hot}">DAY {day} · TODAY ONLY</div>
+<div style="font-size:19px;font-weight:800;line-height:1.25;color:#2A1A17;margin-top:4px">{today_line}</div>
+<div style="font-size:12.5px;color:#5c4c47;margin-top:6px">{nxt}</div></div>
+<div style="flex:none">{btn}</div></div></div>'''
+
+pages['deals_d1'] = deals(1, R1, C1, C1, 'rgba(242,235,223,.9)', RED1, '#fff',
+    'font-size:54px;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-2px;line-height:.95', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
+    'Diffuser bundles from £9.99 each + a FREE candle with code FREEFLAME', btn1("Shop today’s deal", RED1))
+pages['deals_d2'] = deals(2, BG2, C2, C2, G2, G2, K2,
+    'font-family:Cardo,Georgia,serif;font-style:italic;font-size:54px;line-height:1', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
+    'Diffuser bundles from £9.99 each + a FREE boxed diffuser with code FREEDIFF', pill2("Shop today’s deal", K2, C2))
+pages['deals_d3'] = deals(3, R3, C3, '#fff', 'rgba(255,255,255,.85)', G3, '#fff',
+    'font-weight:900;font-size:58px;letter-spacing:-2.5px;line-height:.95;text-transform:uppercase', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
+    'Diffuser bundles from £9.99 each + a FREE candle with code FREEFLAME', btn3("Shop today’s deal", G3))
