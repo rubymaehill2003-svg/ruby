@@ -52,7 +52,7 @@ def gift1(slot):
 <div style="font-size:30px;line-height:1.08;font-weight:800;color:{R1};margin:10px 0 14px;letter-spacing:-.5px">{h}</div>
 <div style="display:inline-block;border:1.5px solid {R1};padding:8px 14px;font-size:12px;font-weight:700;letter-spacing:2px;color:{R1}">CODE&nbsp; FREEFLAME</div>
 <div style="margin-top:14px">{btn1('Claim your FREE gift')}</div></div>
-<div style="flex:1;border-left:2px solid {R1}">{ph('p49_candlebox.jpg','68% 72%',280,258,'background-size:170%')}</div></div>'''
+<div style="flex:1;border-left:2px solid {R1}"><div style="width:280px;height:258px;background:url({P('candle_only.jpg')}) center/cover no-repeat"></div></div></div>'''
 pages['gift_d1_AM'] = gift1('AM'); pages['gift_d1_PM'] = gift1('PM')
 
 def hero1A(photo, pos, eb, head, sub, cta):
