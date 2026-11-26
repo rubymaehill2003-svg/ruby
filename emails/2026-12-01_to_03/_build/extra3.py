@@ -114,3 +114,24 @@ pages['hero_d2_AM_A'] = moody('p49_diffbox.jpg', '46% 60%', 'auto 118%', 'THE 12
 pages['hero_d2_AM_B'] = moody('p48_bsgb.jpg', '50% 62%', 'cover', 'DAY 2 · READY FOR GUESTS?', 'What’s that<br>beautiful smell?', 'From £9.99 a diffuser when you bundle', 'Shop bundles')
 pages['hero_d2_PM_A'] = moody('cover1.jpg', '60% 70%', 'auto 128%', 'DAY 2 · BUNDLE &amp; SAVE', 'A diffuser for<br>every room', 'Save up to £89.91 · from £9.99 each', 'Shop now')
 pages['hero_d2_PM_B'] = moody('cover2.jpg', '48% 66%', 'cover', 'DAY 2 · AROUND THE CLOCK', 'Christmas in every room,<br>all day long', 'Works 24/7 · from £9.99 each when you bundle', 'Shop now')
+
+# ---------------- Free gift banners · bauble design on every day (own product, code, day colour)
+def gift_orn(day, slot, item, code, photo, pos, size, c_mid, c_main, c_dark, seed):
+    bg = f'radial-gradient(ellipse at 50% 30%, {c_mid} 0%, {c_main} 60%, {c_dark} 100%)'
+    head = f'Your Day {day} gift' if slot == 'AM' else 'Final hours…'
+    sub = f'A FREE {item.upper()} WITH EVERY ORDER' if slot == 'AM' else f'YOUR FREE {item.upper()} ENDS TODAY'
+    ticket = f'''<div style="position:relative;display:inline-block;background:{C2};color:{c_main};padding:11px 30px;font-weight:700;letter-spacing:2.5px;font-size:13px">
+<span style="position:absolute;left:-9px;top:50%;width:18px;height:18px;border-radius:50%;background:{c_main};transform:translateY(-50%)"></span>
+<span style="position:absolute;right:-9px;top:50%;width:18px;height:18px;border-radius:50%;background:{c_main};transform:translateY(-50%)"></span>
+<span style="border-left:1.5px dashed {c_main};padding-left:14px;margin-left:-6px">CODE&nbsp; {code}</span></div>'''
+    return f'''<div style="height:280px;background:{bg};position:relative;overflow:hidden">{snow(40,seed,'rgba(255,255,255,.35)',2,280)}
+{ornament(150, 60, 180, photo, pos, size)}
+<div style="position:absolute;left:290px;right:24px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start">
+<div class="serif it" style="color:{C2};font-size:38px;line-height:1">{head}</div>
+<div style="color:{G2};font-size:10.5px;font-weight:700;letter-spacing:1.6px;margin:10px 0 16px">{sub}</div>
+{ticket}<div style="margin-top:14px">{pill2('Claim your gift →', C2, c_main)}</div></div></div>'''
+
+for slot in ('AM', 'PM'):
+    pages[f'gift_d1_{slot}'] = gift_orn(1, slot, 'candle', 'FREEFLAME', 'candle_only.jpg', '50% 45%', 'cover', '#2E6E4D', '#1E4D36', '#0E2619', 11 + (slot == 'PM'))
+    pages[f'gift_d2_{slot}'] = gift_orn(2, slot, 'boxed diffuser', 'FREEDIFF', 'p49_diffbox.jpg', '40% 58%', '300%', K2b, K2, '#2A0710', 22 + (slot == 'PM'))
+    pages[f'gift_d3_{slot}'] = gift_orn(3, slot, 'candle', 'FREEFLAME', 'candle_only.jpg', '50% 45%', 'cover', '#C83440', '#B01E2A', '#5E0C14', 33 + (slot == 'PM'))
