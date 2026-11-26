@@ -124,7 +124,7 @@ pages['box_d1'] = box1(1, 'Jasmine &amp; Rosewood', 'box_jasmine.jpg')
 pages['hero_d1_AM_A'] = hero1A('xmas_boxes_warm.jpg', '62% 80%', 'The 12 days of Christmas · Day 1', 'Christmas scent for every room, from £9.99', 'Bundle 10 reed diffusers and save £89.91. Mix and match any scents – one for the hallway, the lounge, the guest room and beyond.', 'Build your bundle')
 pages['hero_d1_AM_B'] = hero1B('cover2.jpg', '50% 64%', 'It starts the<br>moment they<br>walk in…', 'Guests notice the second they walk in. Bundle a diffuser for every room from £9.99 each.', 'Build your bundle')
 pages['hero_d1_AM_C'] = advent1()
-pages['hero_d1_PM_A'] = hero1A('bundle_back.jpg', '50% 58%', 'Day 1 · Bundle &amp; save', 'One for every room. Save up to £89.91', 'Reed diffusers from £9.99 each when you bundle, plus a FREE candle with code FREEFLAME.', 'Shop bundles')
+pages['hero_d1_PM_A'] = hero1A('cover1.jpg', '62% 78%', 'Day 1 · Bundle &amp; save', 'One for every room. Save up to £89.91', 'Reed diffusers from £9.99 each when you bundle, plus a FREE candle with code FREEFLAME.', 'Shop bundles')
 pages['hero_d1_PM_B'] = hero1B('embrace.jpg', '62% 55%', 'The house<br>everyone talks<br>about', 'Strong, never overpowering. Bundle up and every diffuser is just £9.99.', 'Shop bundles')
 pages['hero_d1_PM_C'] = cracker1()
 
