@@ -115,10 +115,40 @@ def reminder_night():
 <div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#3b4a40;">Use code <b style="letter-spacing:1.5px;color:#B3202A;">FREEFLAME</b> at checkout.</div>
 </td></tr></table></td></tr>'''
 
+
+# ---- Wednesday PM own layout: cream "evening edit" live sections
+TH_W = dict(name='Evening edit · cream, burgundy & gold', page='#E9DCCB', card='#F6EEE3')
+def tiles_wpm():
+    rows = ''
+    for name, url, now, was, pct, k in DAYS[2]['tiles']:
+        rows += f'''<tr><td style="padding:0 0 12px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;border:1px solid #E2D3BF;"><tr>
+<td width="120" valign="middle" style="width:120px;padding:10px;">{a(url, f'<img src="{img(k)}" width="100" alt="{name} – now £{now}" style="display:block;width:100px;height:auto;border:0;">')}</td>
+<td valign="middle" style="padding:10px 6px;"><span style="display:inline-block;font-family:Inter,Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;color:#F7EEE2;background:#5A1023;padding:3px 8px;">SAVE {pct}%</span>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:18px;line-height:22px;color:#5A1023;padding:6px 0 4px;">{name}</div>
+<div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#2A1A17;"><b>£{now}</b> <span style="color:#9b8a84;text-decoration:line-through;">£{was}</span></div></td>
+<td width="110" valign="middle" align="right" style="width:110px;padding:10px 14px 10px 0;">{a(url, '<span style="display:inline-block;font-family:Inter,Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:1.2px;color:#5A1023;border:1.5px solid #5A1023;border-radius:30px;padding:9px 14px;white-space:nowrap;">SHOP</span>')}</td>
+</tr></table></td></tr>'''
+    return f'''<tr><td style="padding:34px 30px 22px;background:#F6EEE3;">
+<div style="font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#7C1E37;text-align:center;">✦ TONIGHT’S LITTLE EXTRAS ✦</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:32px;line-height:38px;color:#5A1023;text-align:center;padding:6px 0 20px;">Little gifts under £11</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>'''
+def proof_wpm():
+    return '''<tr><td style="padding:0 30px 30px;background:#F6EEE3;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #D6B46E;border-bottom:1px solid #D6B46E;"><tr><td align="center" style="padding:26px 10px;">
+<div style="font-family:Cardo,Georgia,serif;font-size:56px;line-height:40px;color:#D6B46E;">“</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:26px;line-height:32px;color:#5A1023;padding:4px 0 8px;">Everyone who visits asks what it is.</div>
+<div style="font-family:Inter,Arial,sans-serif;font-size:13px;color:#5b4540;"><span style="color:#B8933F;letter-spacing:2px;">★★★★★</span>&nbsp; 350,000+ five-star reviews · 1 sold every 18 seconds</div></td></tr></table></td></tr>'''
+def reminder_wpm():
+    return '''<tr><td style="padding:0 30px 34px;background:#F6EEE3;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#5A1023;"><tr><td align="center" style="padding:24px 24px;">
+<div style="font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#D6B46E;">ENDS MIDNIGHT</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:26px;line-height:32px;color:#F7EEE2;padding:6px 0 10px;">Your FREE boxed diffuser is waiting</div>
+<span style="display:inline-block;font-family:Inter,Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;color:#5A1023;background:#D6B46E;padding:9px 18px;">CODE FREEDIFF</span></td></tr></table></td></tr>'''
+
 def email(day, slot, ver):
     d = DAYS[day]; subj, subjB, pre = COPY[(day, slot)]; t = TH[day]
     night = (day, slot) == (1, 'PM')
     if night: t = dict(TH[day], **TH_N)
+    wpm = (day, slot) == (2, 'PM')
+    if wpm: t = dict(TH[day], **TH_W)
     sfx = '_PM' if night else ''
     boxname, boxurl = d['box']
     wam = day == 2
@@ -145,9 +175,9 @@ def email(day, slot, ver):
       '<!-- SECONDARY OFFER: GIFT BOX DEAL OF THE DAY -->',
       imgrow(img(f'box_d{day}{sfx}'), boxurl, f'Also {"tonight" if (wam and slot == "PM") else "today"}: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
       *([] if wam else DEALS),
-      '<!-- MORE OFFERS (retail price sheet) -->', tiles_night() if night else tiles(day),
-      '<!-- SOCIAL PROOF -->', proof_night() if night else proof(day),
-      '<!-- FREE GIFT reminder -->', reminder_night() if night else reminder(day, slot),
+      '<!-- MORE OFFERS (retail price sheet) -->', tiles_night() if night else tiles_wpm() if wpm else tiles(day),
+      '<!-- SOCIAL PROOF -->', proof_night() if night else proof_wpm() if wpm else proof(day),
+      '<!-- FREE GIFT reminder -->', reminder_night() if night else reminder_wpm() if wpm else reminder(day, slot),
       *(DEALS if wam else []),
       FOOTER,
     ]
