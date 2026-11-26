@@ -137,7 +137,7 @@ for slot in ('AM', 'PM'):
     pages[f'gift_d3_{slot}'] = gift_orn(3, slot, 'candle', 'FREEFLAME', 'candle_only.jpg', '50% 45%', 'cover', '#C83440', '#B01E2A', '#5E0C14', 33 + (slot == 'PM'))
 
 # ---------------- "12 Days. 12 Deals." salesy section (per day, own colours)
-def deals(day, bg, panel, ink, acc, hot, hot_fg, head_css, sub_css, today_line, btn):
+def deals(day, bg, panel, ink, acc, hot, hot_fg, head_css, sub_css, today_line, btn, thumb=None, price=''):
     cells = ''
     for n in range(1, 13):
         if n < day:
@@ -157,8 +157,9 @@ def deals(day, bg, panel, ink, acc, hot, hot_fg, head_css, sub_css, today_line, 
 <div style="{sub_css};color:{ink};opacity:.92">A brand-new deal drops every single day for the first 12 days of December – and each one is gone in 24 hours.</div></div>
 <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:24px 4px 22px;position:relative">{cells}</div>
 <div style="background:{panel};padding:20px 22px;position:relative;display:flex;gap:18px;align-items:center;justify-content:space-between">
-<div><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{hot}">DAY {day} · TODAY ONLY</div>
-<div style="font-size:19px;font-weight:800;line-height:1.25;color:#2A1A17;margin-top:4px">{today_line}</div>
+{f'<div style="width:96px;height:96px;flex:none;background:#fff url({PR(thumb)}) center/cover no-repeat;border:1.5px solid {hot}"></div>' if thumb else ''}
+<div style="flex:1"><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{hot}">DAY {day} · TODAY ONLY</div>
+<div style="font-size:19px;font-weight:800;line-height:1.25;color:#2A1A17;margin-top:4px">{today_line}</div>{price}
 <div style="font-size:12.5px;color:#5c4c47;margin-top:6px">{nxt}</div></div>
 <div style="flex:none">{btn}</div></div></div>'''
 
@@ -171,3 +172,8 @@ pages['deals_d2'] = deals(2, BG2, C2, C2, G2, G2, K2,
 pages['deals_d3'] = deals(3, R3, C3, '#fff', 'rgba(255,255,255,.85)', G3, '#fff',
     'font-weight:900;font-size:58px;letter-spacing:-2.5px;line-height:.95;text-transform:uppercase', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
     'Diffuser bundles from £9.99 each + a FREE candle with code FREEFLAME', btn3("Shop today’s deal", G3))
+
+pages['deals_d1_AM'] = deals(1, R1, C1, C1, 'rgba(242,235,223,.9)', RED1, '#fff',
+    'font-size:54px;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-2px;line-height:.95', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
+    'Customer Favourites Mini Mist Box of 4', btn1("Shop today’s deal", RED1), thumb='minimist.jpg',
+    price=f'<div style="margin-top:4px"><span style="font-size:24px;font-weight:900;font-style:italic;color:{RED1}">£7.99</span> <span style="font-size:13px;color:#7d726c">was <s>£13.49</s></span> <span style="display:inline-block;background:{RED1};color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;margin-left:4px">41% OFF</span></div>')

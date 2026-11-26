@@ -97,7 +97,8 @@ def email(day, slot, ver):
       '<!-- SECONDARY OFFER: GIFT BOX DEAL OF THE DAY -->',
       imgrow(img(f'box_d{day}'), boxurl, f'Also today: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
       '<!-- 12 DAYS. 12 DEALS. – a new deal every day for the first 12 days of December -->',
-      imgrow(img(f'deals_d{day}'), BUNDLE, f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day {day} – today only: diffuser bundles from £9.99 each plus a FREE {d['item']} with code {d['code']}. Shop today’s deal", bg=t['card']),
+      (imgrow(img('deals_d1_AM'), 'https://valentte.com/organic/customer-favourites-mini-mist-box-of-4/', "12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 1 – today only: Customer Favourites Mini Mist Box of 4, now £7.99, was £13.49, 41% off. Shop today’s deal", bg=t['card']) if (day, slot) == (1, 'AM') else
+       imgrow(img(f'deals_d{day}'), BUNDLE, f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day {day} – today only: diffuser bundles from £9.99 each plus a FREE {d['item']} with code {d['code']}. Shop today’s deal", bg=t['card'])),
       '<!-- MORE OFFERS (retail price sheet) -->', tiles(day),
       '<!-- SOCIAL PROOF -->', proof(day),
       '<!-- FREE GIFT reminder -->', reminder(day, slot),
