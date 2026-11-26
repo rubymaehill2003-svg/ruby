@@ -462,3 +462,60 @@ pages['hero_d2_PM_A'] = heroPM('ai_festive_PM_A.jpg', '50% 72%', 'DAY 2 · FINAL
 pages['hero_d2_PM_B'] = heroPM('ai_festive_PM_B.jpg', '50% 70%', 'DAY 2 · HOSTING THIS CHRISTMAS?', 'Set the table.<br>Scent the room.', 'From £9.99 a diffuser when you bundle', 'Build your bundle')
 pages['bundle_d2_PM'] = bundlePM()
 pages['box_d2_PM'] = boxPM('Pure Lavender', 'box_lavender_portrait_ai.jpg')
+
+# ================= THURSDAY AM upgrades · bright red, pine green & cream (collage spirit)
+def hero3AM(photo, pos, eb, head, sub, link):
+    return f'''<div style="background:{G3};padding:34px 30px 0;position:relative;overflow:hidden">{snow(50,313,'rgba(255,255,255,.35)',2.2,900)}
+<div style="text-align:center;color:{C3};position:relative">
+<div style="font-size:11px;font-weight:700;letter-spacing:3.5px;opacity:.9">{eb}</div>
+<div class="serif it" style="font-size:46px;line-height:1.05;margin:10px 0 8px">{head}</div>
+<div style="font-size:14.5px;opacity:.92">{sub}</div></div>
+<div style="position:relative;margin:24px 0 0;height:560px;background:#fff url({P(photo)}) {pos}/cover no-repeat;border:8px solid {C3};border-bottom:0">
+<div style="position:absolute;left:50%;bottom:26px;transform:translateX(-50%)">{btn3(link, R3)}</div>
+<div style="position:absolute;top:18px;right:18px;width:96px;height:96px;border-radius:50%;background:{R3};color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(8deg);box-shadow:0 6px 16px rgba(0,0,0,.25)">
+<div style="font-size:10px;font-weight:800;letter-spacing:1.5px">FROM</div><div class="serif" style="font-size:30px;font-weight:700;line-height:1">£9.99</div><div style="font-size:9.5px;font-weight:800;letter-spacing:1.5px">EACH</div></div></div></div>'''
+
+def bundle3AM():
+    def card(n, off, note, bg, best=False):
+        rib = f'<div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#F2C94C;color:#3a1a12;font-size:10px;font-weight:900;letter-spacing:1.5px;padding:5px 12px;white-space:nowrap;border-radius:3px">★ BEST VALUE ★</div>' if best else ''
+        return f'''<div style="position:relative;flex:1;background:{bg};color:#fff;text-align:center;padding:24px 8px 18px;border-radius:6px;{'transform:scale(1.07);box-shadow:0 10px 24px rgba(0,0,0,.22)' if best else 'box-shadow:0 4px 12px rgba(0,0,0,.12)'}">{rib}
+<div style="width:14px;height:14px;border-radius:50%;background:{C3};margin:0 auto 8px"></div>
+<div style="font-size:12px;font-weight:800;letter-spacing:1.5px;opacity:.9">{n} DIFFUSERS</div>
+<div style="font-size:15px;font-weight:700;margin-top:10px;opacity:.9">SAVE</div>
+<div style="font-size:44px;font-weight:900;letter-spacing:-1.5px;line-height:1">{off}</div>
+<div style="font-size:12px;margin-top:8px;font-weight:600;min-height:15px">{note}</div></div>'''
+    ticks = ''.join(f'<div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;border-radius:50%;background:{G3};color:#fff;font-size:12px;font-weight:900;display:inline-flex;align-items:center;justify-content:center">✓</span>{t}</div>' for t in ['Mix &amp; match any scents', 'Each lasts up to 12 weeks', 'FREE candle · FREEFLAME'])
+    return f'''<div style="background:{C3};padding:0 0 36px;position:relative">
+<div style="background:{R3};color:#fff;text-align:center;font-size:12px;font-weight:800;letter-spacing:3px;padding:11px 0">TODAY ONLY · BUNDLE &amp; SAVE · ENDS MIDNIGHT</div>
+<div style="text-align:center;padding:30px 30px 0">
+<div style="font-size:12px;font-weight:800;letter-spacing:3px;color:{G3}">TODAY’S MAIN OFFER</div>
+<div style="font-size:60px;font-weight:900;letter-spacing:-2.5px;line-height:.98;color:{R3};margin:8px 0 6px">SAVE UP TO £89.91</div>
+<div class="serif it" style="font-size:24px;color:{G3}">on diffuser bundles – from just £9.99 each</div></div>
+<div style="display:flex;gap:14px;padding:34px 30px 0">{card('3','£21','',G3)}{card('6','£48','',R3)}{card('10','£89.91','just £9.99 each',G3,True)}</div>
+<div style="position:relative;margin:30px 30px 0;height:230px;background:url({P('xmas_boxes.jpg')}) 50% 55%/cover no-repeat;border:6px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.14);transform:rotate(-1deg)"></div>
+<div style="display:flex;justify-content:space-between;gap:10px;padding:24px 30px 0;color:#2A1A17;font-size:13px;font-weight:600">{ticks}</div>
+<div style="text-align:center;margin-top:24px"><div style="display:inline-block;background:{R3};color:#fff;font-weight:800;font-size:15px;letter-spacing:1.8px;padding:18px 46px;border-radius:4px;box-shadow:0 8px 18px rgba(176,30,42,.35)">BUILD MY BUNDLE &amp; SAVE →</div>
+<div style="color:#2A1A17;font-size:12.5px;margin-top:12px"><span style="color:{R3};letter-spacing:2px">★★★★★</span> &nbsp;350,000+ five-star reviews</div></div></div>'''
+
+def box3AM(name, img):
+    return f'''<div style="background:{G3};padding:30px 30px 34px;position:relative;overflow:hidden">{snow(30,323,'rgba(255,255,255,.3)',2,700)}
+<div style="background:#fff;padding:18px 18px 24px;position:relative;border-radius:4px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:0 4px 12px">
+<div style="font-size:11px;font-weight:800;letter-spacing:2.5px;color:{G3}">ALSO TODAY · GIFT BOX DEAL</div>
+<div style="background:{R3};color:#fff;font-size:12px;font-weight:800;letter-spacing:1px;padding:5px 10px">SAVE 37%</div></div>
+<div style="height:404px;background:#fff url({P(img)}) center/cover no-repeat"></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;padding:18px 4px 0;gap:16px">
+<div><div class="serif it" style="font-size:30px;line-height:1.05;color:{R3}">Best-Selling Gift Box</div>
+<div style="font-size:12.5px;font-weight:800;letter-spacing:2px;color:{G3};margin-top:4px">{name.upper()}</div>
+<div style="font-size:13.5px;color:#5b4540;margin-top:6px">Reed diffuser, natural wax candle &amp; room mist, gift-boxed.</div></div>
+<div style="text-align:right;flex:none"><div style="font-size:40px;font-weight:900;letter-spacing:-1px;color:{R3};line-height:1">£23.99</div><div style="font-size:14px;color:#9b8a84">was <s>£37.99</s></div></div></div>
+<div style="padding:16px 4px 0">{btn3('Shop the gift box', R3)}</div></div></div>'''
+
+pages['hero_d3_AM_A'] = hero3AM('ai_thu_A.jpg', '50% 70%', 'THE 12 DAYS OF CHRISTMAS · DAY 3', 'Deck the halls<br>(and scent them too)', 'Diffusers from £9.99 each when you bundle', 'Build my bundle')
+pages['hero_d3_AM_B'] = hero3AM('ai_thu_B.jpg', '50% 70%', 'DAY 3 · COMING HOME FOR CHRISTMAS', 'The scent that says<br>“welcome home”', 'Bundle one for every room from £9.99 each', 'Shop bundles')
+pages['bundle_d3_AM'] = bundle3AM()
+pages['box_d3_AM'] = box3AM('Cardamom &amp; Nutmeg', 'box_cardamom_ai.jpg')
+pages['deals_d3_AM'] = deals(3, R3, C3, '#fff', 'rgba(255,255,255,.85)', G3, '#fff',
+    'font-weight:900;font-size:58px;letter-spacing:-2.5px;line-height:.95;text-transform:uppercase', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
+    'Bergamot &amp; Lemon Reed Diffuser Refill (100ml)', btn3("Shop today’s deal", G3), thumb='refill_bergamot.jpg', stack=True,
+    price=f'<div style="margin-top:4px"><span style="font-size:26px;font-weight:900;color:{R3}">£10.49</span> <span style="font-size:13px;color:#7d726c">was <s>£17.99</s></span> <span style="display:inline-block;background:{R3};color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;margin-left:4px">42% OFF</span></div>')

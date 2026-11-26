@@ -30,6 +30,8 @@ HERO_ALT[(2,'PM','A')] = 'Cosy nights, beautifully scented. Save up to £89.91, 
 HERO_ALT[(2,'PM','B')] = 'Set the table. Scent the room. From £9.99 a diffuser when you bundle. Build your bundle'
 HERO_ALT[(2,'PM','C')] = 'Peel back tonight’s bundle surprise – up to £89.91 off. Peel to reveal'
 HERO_ALT[(3,'AM','B')] = 'The scent that greets you before you’ve even taken your coat off. Bundle one for every room from £9.99 each. Build my bundle'
+HERO_ALT[(3,'AM','A')] = 'Deck the halls (and scent them too). Diffusers from £9.99 each when you bundle. Build my bundle'
+HERO_ALT[(3,'AM','B')] = 'The scent that says welcome home. Bundle one for every room from £9.99 each. Shop bundles'
 HERO_ALT[(3,'AM','C')] = 'Three presents, one is yours – every present hides a bundle saving. Pick my present'
 HERO_ALT[(3,'PM','C')] = 'Give Christmas a spin – every slice is a bundle saving. Spin now'
 
@@ -151,13 +153,14 @@ def email(day, slot, ver):
     if wpm: t = dict(TH[day], **TH_W)
     sfx = '_PM' if night else ''
     boxname, boxurl = d['box']
-    wam = day == 2
+    wam = day == 2 or (day, slot) == (3, 'AM')
     if wam: sfx = '_' + slot
     DEALS = [
       '<!-- spacer between gift box and 12 Days section -->',
       f'<tr><td height="24" style="height:24px;font-size:0;line-height:0;background:{t["card"]};">&nbsp;</td></tr>',
       '<!-- 12 DAYS. 12 DEALS. – a new deal every day for the first 12 days of December -->',
-      (imgrow(img(f'deals_d2_{slot}'), 'https://valentte.com/organic/100ml-diffuser-refill-wild-mint-sicilian-lemon/', f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 2 – {'today only' if slot == 'AM' else 'final hours'}: Wild Mint & Sicilian Lemon Reed Diffuser Refill (100ml), now £9.49, was £17.99, 47% off. Shop {'today' if slot == 'AM' else 'tonight'}’s deal", bg=t['card']) if wam else
+      (imgrow(img('deals_d3_AM'), 'https://valentte.com/organic/bergamot-and-lemon-100ml-diffuser-refill/', "12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 3 – today only: Bergamot & Lemon Reed Diffuser Refill (100ml), now £10.49, was £17.99, 42% off. Shop today’s deal", bg=t['card']) if (day, slot) == (3, 'AM') else
+       imgrow(img(f'deals_d2_{slot}'), 'https://valentte.com/organic/100ml-diffuser-refill-wild-mint-sicilian-lemon/', f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 2 – {'today only' if slot == 'AM' else 'final hours'}: Wild Mint & Sicilian Lemon Reed Diffuser Refill (100ml), now £9.49, was £17.99, 47% off. Shop {'today' if slot == 'AM' else 'tonight'}’s deal", bg=t['card']) if wam else
        imgrow(img('deals_d1_AM'), 'https://valentte.com/organic/customer-favourites-mini-mist-box-of-4/', "12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 1 – today only: Customer Favourites Mini Mist Box of 4, now £7.99, was £13.49, 41% off. Shop today’s deal", bg=t['card']) if (day, slot) == (1, 'AM') else
        imgrow(img(f'deals_d{day}{sfx}'), BUNDLE, f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day {day} – today only: diffuser bundles from £9.99 each plus a FREE {d['item']} with code {d['code']}. Shop today’s deal", bg=t['card'])),
     ]

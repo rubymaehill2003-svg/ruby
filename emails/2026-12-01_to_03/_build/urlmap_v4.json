@@ -23,8 +23,8 @@
  "hero_d2_PM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/bf335196-b238-408c-89e7-ad64f95760b4.jpg",
  "hero_d2_PM_B": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/c71c9f22-8066-4871-9dc9-8b60777a5142.jpg",
  "hero_d2_PM_C": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/90a57758-678b-4554-ab89-bfabbd0b44e5.jpg",
- "hero_d3_AM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/5cc3223a-ea0c-4d0d-b85c-5b384f17f587.jpg",
- "hero_d3_AM_B": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/d5dfc2ab-822f-4977-9754-5e09c49c8e75.jpg",
+ "hero_d3_AM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/b1d11906-19b9-42c3-a25a-e512f491d2a3.jpg",
+ "hero_d3_AM_B": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/53f8fa93-dc6f-48ee-af19-68d0839022d3.jpg",
  "hero_d3_AM_C": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/31c469d6-41c1-418a-8045-5e7cd7d0a560.jpg",
  "hero_d3_PM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/5c61b2a8-57bb-480d-a062-04c81bc70eb9.jpg",
  "hero_d3_PM_B": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/6a4967dc-8b2d-4200-900c-d3c69a0341e7.jpg",
@@ -44,5 +44,8 @@
  "deals_d2_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/88e9c542-1dd9-48a5-beb8-8e3c112cc643.jpg",
  "bundle_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/284b5183-5c36-4b41-bc80-382c43b4a748.jpg",
  "box_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/12e0f40a-30fb-4272-9be2-c78fe0af196a.jpg",
- "deals_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/8c5e6edb-aef8-40f1-8a38-15e3ba3dfbb6.jpg"
+ "deals_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/8c5e6edb-aef8-40f1-8a38-15e3ba3dfbb6.jpg",
+ "bundle_d3_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/fb5ea095-8a4a-431d-9c12-d67cb4284565.jpg",
+ "box_d3_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/1754e37c-c332-4cf5-9a5d-f9af57a77ef0.jpg",
+ "deals_d3_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/f8a473e3-6e1b-41d3-ae1b-9d328eef070b.jpg"
 }
