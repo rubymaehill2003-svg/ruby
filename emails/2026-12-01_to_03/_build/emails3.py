@@ -81,8 +81,43 @@ def reminder(day, slot):
 <div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#3a2a26;">Use code <b style="letter-spacing:1.5px;color:{fg};">{d['code']}</b> at checkout.</div>
 </td></tr></table></td></tr>'''
 
+# ---- Tuesday PM "night" variant: own palette + list-style tiles, quote card, gold ticket
+TH_N = dict(name='Tuesday night · night green & gold', page='#08180F', card='#0F2A1D')
+def tiles_night():
+    rows=''
+    for name, url, now, was, pct, k in DAYS[1]['tiles']:
+        rows += f'''<tr><td style="padding:0 0 14px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#173D2A;border:1px solid #D6B46E;"><tr>
+<td width="130" style="width:130px;padding:0;">{a(url, f'<img src="{img(k)}" width="130" alt="{name} – now £{now}" style="display:block;width:130px;height:130px;border:0;">')}</td>
+<td style="padding:14px 18px;font-family:Inter,Arial,sans-serif;color:#F3EBDD;">
+<span style="display:inline-block;background:#B3202A;color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;">SAVE {pct}%</span>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:19px;line-height:23px;padding:6px 0 4px;">{name}</div>
+<div style="font-size:14px;"><b style="color:#D6B46E;font-size:17px;">£{now}</b> <span style="opacity:.6;text-decoration:line-through;">£{was}</span></div></td>
+<td width="120" align="right" style="padding:0 16px 0 0;">{a(url, '<span style="display:inline-block;border:1.5px solid #D6B46E;color:#D6B46E;font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;padding:9px 12px;white-space:nowrap;">SHOP NOW</span>')}</td>
+</tr></table></td></tr>'''
+    return f'''<tr><td style="padding:34px 26px 22px;background:#0F2A1D;">
+<div style="font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:#D6B46E;text-align:center;">ALSO ON OFFER TONIGHT</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:32px;line-height:38px;color:#F3EBDD;text-align:center;padding:6px 0 20px;">Small treats, big savings</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{rows}</table></td></tr>'''
+def proof_night():
+    return '''<tr><td style="padding:10px 26px 30px;background:#0F2A1D;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F3EBDD;"><tr><td align="center" style="padding:26px 30px 24px;">
+<div style="font-family:Cardo,Georgia,serif;font-size:60px;line-height:40px;color:#D6B46E;">&ldquo;</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:26px;line-height:32px;color:#0F2A1D;padding:4px 0 8px;">Everyone who visits asks what it is.</div>
+<div style="font-family:Inter,Arial,sans-serif;font-size:18px;letter-spacing:4px;color:#B3202A;">★★★★★</div>
+<div style="font-family:Inter,Arial,sans-serif;font-size:12.5px;line-height:19px;color:#4a4a4a;padding-top:6px;">350,000+ five-star reviews &nbsp;·&nbsp; Over 1 million happy customers &nbsp;·&nbsp; 1 sold every 18 seconds</div>
+</td></tr></table></td></tr>'''
+def reminder_night():
+    return '''<tr><td align="center" style="padding:0 30px 30px;background:#0F2A1D;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border:1.5px dashed #D6B46E;background:#173D2A;"><tr><td align="center" style="padding:18px 30px;">
+<div style="font-family:Inter,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#D6B46E;">FINAL HOURS · ENDS TONIGHT</div>
+<div style="font-family:Cardo,Georgia,serif;font-style:italic;font-size:24px;line-height:30px;color:#F3EBDD;padding:6px 0 4px;">Your FREE candle is waiting</div>
+<div style="font-family:Inter,Arial,sans-serif;font-size:14px;color:#F3EBDD;">Use code <b style="letter-spacing:1.5px;color:#D6B46E;">FREEFLAME</b> at checkout.</div>
+</td></tr></table></td></tr>'''
+
 def email(day, slot, ver):
     d = DAYS[day]; subj, subjB, pre = COPY[(day, slot)]; t = TH[day]
+    night = (day, slot) == (1, 'PM')
+    if night: t = dict(TH[day], **TH_N)
+    sfx = '_PM' if night else ''
     boxname, boxurl = d['box']
     rows = [
       HEADER,
@@ -93,17 +128,17 @@ def email(day, slot, ver):
       f'<!-- HERO · Version {ver} -->',
       imgrow(img(f'hero_d{day}_{slot}_{ver}'), BUNDLE, HERO_ALT[(day, slot, ver)]),
       '<!-- MAIN OFFER: DIFFUSER BUNDLE (3 / 6 / 10) -->',
-      imgrow(img(f'bundle_d{day}'), BUNDLE, 'Bundle & save – 3 diffusers save £21, 6 diffusers save £48, 10 diffusers save £89.91, from £9.99 each. Build your bundle', bg=t['card']),
+      imgrow(img(f'bundle_d{day}{sfx}'), BUNDLE, 'Bundle & save – 3 diffusers save £21, 6 diffusers save £48, 10 diffusers save £89.91, from £9.99 each. Build your bundle', bg=t['card']),
       '<!-- SECONDARY OFFER: GIFT BOX DEAL OF THE DAY -->',
-      imgrow(img(f'box_d{day}'), boxurl, f'Also today: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
+      imgrow(img(f'box_d{day}{sfx}'), boxurl, f'Also today: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
       '<!-- spacer between gift box and 12 Days section -->',
       f'<tr><td height="24" style="height:24px;font-size:0;line-height:0;background:{t["card"]};">&nbsp;</td></tr>',
       '<!-- 12 DAYS. 12 DEALS. – a new deal every day for the first 12 days of December -->',
       (imgrow(img('deals_d1_AM'), 'https://valentte.com/organic/customer-favourites-mini-mist-box-of-4/', "12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 1 – today only: Customer Favourites Mini Mist Box of 4, now £7.99, was £13.49, 41% off. Shop today’s deal", bg=t['card']) if (day, slot) == (1, 'AM') else
-       imgrow(img(f'deals_d{day}'), BUNDLE, f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day {day} – today only: diffuser bundles from £9.99 each plus a FREE {d['item']} with code {d['code']}. Shop today’s deal", bg=t['card'])),
-      '<!-- MORE OFFERS (retail price sheet) -->', tiles(day),
-      '<!-- SOCIAL PROOF -->', proof(day),
-      '<!-- FREE GIFT reminder -->', reminder(day, slot),
+       imgrow(img(f'deals_d{day}{sfx}'), BUNDLE, f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day {day} – today only: diffuser bundles from £9.99 each plus a FREE {d['item']} with code {d['code']}. Shop today’s deal", bg=t['card'])),
+      '<!-- MORE OFFERS (retail price sheet) -->', tiles_night() if night else tiles(day),
+      '<!-- SOCIAL PROOF -->', proof_night() if night else proof(day),
+      '<!-- FREE GIFT reminder -->', reminder_night() if night else reminder(day, slot),
       FOOTER,
     ]
     return f'''<!DOCTYPE html>

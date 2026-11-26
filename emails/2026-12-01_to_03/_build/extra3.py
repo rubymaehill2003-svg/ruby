@@ -177,3 +177,97 @@ pages['deals_d1_AM'] = deals(1, R1, C1, C1, 'rgba(242,235,223,.9)', RED1, '#fff'
     'font-size:54px;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-2px;line-height:.95', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
     'Customer Favourites Mini Mist Box of 4', btn1("Shop today’s deal", RED1), thumb='minimist.jpg',
     price=f'<div style="margin-top:4px"><span style="font-size:24px;font-weight:900;font-style:italic;color:{RED1}">£7.99</span> <span style="font-size:13px;color:#7d726c">was <s>£13.49</s></span> <span style="display:inline-block;background:{RED1};color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;margin-left:4px">41% OFF</span></div>')
+
+# ================= TUESDAY PM · "Tuesday night" layout (night green + gold, new formats)
+N1 = '#0F2A1D'; N1b = '#173D2A'; GOLDN = '#D6B46E'; CRN = '#F3EBDD'
+BGN = f'radial-gradient(ellipse at 50% 20%, {N1b} 0%, {N1} 60%, #08180F 100%)'
+def btnN(label, bg=RED1, fg='#fff'):
+    return f'<div style="display:inline-block;background:{bg};color:{fg};font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;padding:14px 22px;border-radius:2px;white-space:nowrap">{label}</div>'
+
+def bundle1PM():
+    steps = [('1', 'Pick your pack', '3, 6 or 10 diffusers'), ('2', 'Choose any scents', 'Mix &amp; match freely'), ('3', 'Save up to £89.91', 'From £9.99 each')]
+    st = ''.join(f'''<div style="flex:1;text-align:center;color:{CRN}"><div style="width:54px;height:54px;border-radius:50%;border:1.5px solid {GOLDN};margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-family:Cardo,Georgia,serif;font-size:26px;color:{GOLDN}">{n}</div>
+<div style="font-size:15px;font-weight:700">{t}</div><div style="font-size:12.5px;opacity:.75;margin-top:4px">{s}</div></div>''' for n, t, s in steps)
+    pills = ''.join(f'<div style="background:rgba(15,42,29,.88);border:1px solid {GOLDN};color:{CRN};padding:10px 14px;text-align:center;flex:1"><div class="serif" style="font-size:26px;color:{GOLDN};line-height:1">{n}</div><div style="font-size:11px;font-weight:700;letter-spacing:1px;margin-top:3px">{sv}</div></div>' for n, sv in [('3', 'SAVE £21'), ('6', 'SAVE £48'), ('10', 'SAVE £89.91')])
+    return f'''<div style="background:{BGN};padding:40px 0 36px;position:relative;overflow:hidden">{snow(60,701,'rgba(255,255,255,.25)',2,760)}
+<div style="text-align:center;color:{CRN};padding:0 30px;position:relative">
+<div style="font-size:11px;font-weight:700;letter-spacing:3px;color:{GOLDN}">TONIGHT’S MAIN OFFER</div>
+<div class="serif it" style="font-size:46px;line-height:1.05;margin:10px 0 26px">Build your bundle tonight</div></div>
+<div style="display:flex;gap:10px;padding:0 26px;position:relative">{st}</div>
+<div style="position:relative;margin:30px 0 0;height:300px;background:url({P('bundle_back.jpg')}) 50% 56%/cover no-repeat">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,29,0) 40%,rgba(15,42,29,.85) 100%)"></div>
+<div style="position:absolute;left:26px;right:26px;bottom:18px;display:flex;gap:10px">{pills}</div></div>
+<div style="text-align:center;margin-top:26px;position:relative">{btnN('Start building')}</div></div>'''
+
+def box1PM(name):
+    return f'''<div style="height:380px;position:relative;background:#111 url({P('p48_bsgb.jpg')}) 50% 60%/cover no-repeat">
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,24,15,.95) 0%,rgba(8,24,15,.8) 45%,rgba(8,24,15,0) 75%)"></div>
+<div style="position:absolute;left:34px;top:0;bottom:0;width:300px;display:flex;flex-direction:column;justify-content:center;color:{CRN}">
+<div style="font-size:11px;font-weight:700;letter-spacing:2.5px;color:{GOLDN}">ALSO TONIGHT · GIFT BOX DEAL</div>
+<div class="serif it" style="font-size:32px;line-height:1.1;margin:10px 0 4px">Best-Selling<br>Gift Box</div>
+<div style="font-size:12px;font-weight:700;letter-spacing:2px;color:{GOLDN}">{name.upper()}</div>
+<div style="font-size:13.5px;line-height:1.45;margin:10px 0 12px;opacity:.85">Diffuser, natural wax candle &amp; room mist – gift-boxed.</div>
+<div><span class="serif" style="font-size:34px;font-weight:700">£23.99</span> <span style="font-size:14px;opacity:.7">was <s>£37.99</s></span> <span style="display:inline-block;background:{RED1};color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;margin-left:4px">37% OFF</span></div>
+<div style="margin-top:16px">{btnN('Shop the gift box', CRN, N1)}</div></div></div>'''
+
+def deals1PM():
+    dots = ''
+    for n in range(1, 13):
+        if n == 1:
+            dots += f'<div style="text-align:center;flex:1"><div style="width:30px;height:30px;margin:0 auto;border-radius:50%;background:{RED1};color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px {N1},0 0 0 5px {RED1}">1</div><div style="font-size:8.5px;font-weight:800;letter-spacing:.8px;color:{CRN};margin-top:8px">TODAY</div></div>'
+        else:
+            dots += f'<div style="text-align:center;flex:1"><div style="width:26px;height:26px;margin:2px auto 0;border-radius:50%;border:1.5px solid {GOLDN};color:{GOLDN};font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center">{n}</div><div style="font-size:8.5px;font-weight:700;letter-spacing:.8px;color:{CRN};opacity:.6;margin-top:8px">{n} DEC</div></div>'
+    return f'''<div style="background:{N1};padding:36px 28px 34px;position:relative;overflow:hidden;border-top:1px solid rgba(214,180,110,.35)">{snow(40,702,'rgba(255,255,255,.2)',2,520)}
+<div style="display:flex;gap:26px;align-items:center;position:relative">
+<div style="width:150px;height:150px;flex:none;border-radius:50%;border:2px solid {GOLDN};display:flex;flex-direction:column;align-items:center;justify-content:center;color:{CRN}">
+<div style="font-size:10px;font-weight:700;letter-spacing:2px;color:{GOLDN}">DAY</div><div class="serif" style="font-size:72px;line-height:.9">1</div><div style="font-size:10px;font-weight:700;letter-spacing:2px;color:{GOLDN}">OF 12</div></div>
+<div style="color:{CRN}"><div style="display:inline-block;background:{RED1};color:#fff;font-size:10.5px;font-weight:800;letter-spacing:2px;padding:5px 10px">ENDS AT MIDNIGHT</div>
+<div class="serif it" style="font-size:38px;line-height:1.05;margin:10px 0 8px">12 days. 12 deals.</div>
+<div style="font-size:14px;line-height:1.5;opacity:.88">A new deal every day for the first 12 days of December. Tonight’s is gone at midnight.</div></div></div>
+<div style="position:relative;margin:28px 0 24px"><div style="position:absolute;left:30px;right:30px;top:15px;height:1px;background:rgba(214,180,110,.5)"></div>
+<div style="display:flex;position:relative">{dots}</div></div>
+<div style="background:{CRN};padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;position:relative">
+<div><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{RED1}">TONIGHT ONLY</div>
+<div style="font-size:17px;font-weight:800;line-height:1.3;color:#2A1A17;margin-top:3px">Diffuser bundles from £9.99 each + a FREE candle with code FREEFLAME</div>
+<div style="font-size:12px;color:#5c4c47;margin-top:5px">Day 2 unlocks tomorrow at 7:30am.</div></div>{btnN("Shop tonight’s deal")}</div></div>'''
+
+pages['bundle_d1_PM'] = bundle1PM()
+pages['box_d1_PM'] = box1PM('Jasmine &amp; Rosewood')
+pages['deals_d1_PM'] = deals1PM()
+
+# ---- Tuesday PM heroes in night style (same photo for A & B as requested)
+def heroN_A():
+    return f'''<div style="background:{N1}">
+<div style="height:470px;background:url({P('p49_diffbox.jpg')}) 44% 62%/cover no-repeat;position:relative"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,29,0) 55%,rgba(15,42,29,1) 100%)"></div></div>
+<div style="padding:4px 34px 34px;text-align:center;color:{CRN};position:relative">
+<div style="font-size:11px;font-weight:700;letter-spacing:3px;color:{GOLDN}">DAY 1 · TONIGHT’S BUNDLE OFFER</div>
+<div class="serif it" style="font-size:44px;line-height:1.05;margin:12px 0 12px">One for every room.<br>Save up to £89.91</div>
+<div style="font-size:15px;line-height:1.5;opacity:.88">Reed diffusers from £9.99 each when you bundle, plus a FREE candle with code FREEFLAME.</div>
+<div style="margin-top:20px">{btnN('Shop bundles')}</div></div>
+<div style="height:44px;background:{GOLDN};color:{N1};display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;letter-spacing:2.6px">FROM £9.99 EACH · SAVE UP TO £89.91 · ENDS AT MIDNIGHT</div></div>'''
+
+def heroN_B():
+    return f'''<div style="height:760px;position:relative;background:url({P('p49_diffbox.jpg')}) 44% 60%/cover no-repeat">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,24,15,.15) 30%,rgba(8,24,15,.8) 62%,rgba(8,24,15,.97) 100%)"></div>
+<div style="position:absolute;inset:16px;border:1px solid rgba(214,180,110,.7)"></div>{snow(60,711,'rgba(255,255,255,.45)',2,760)}
+<div style="position:absolute;left:50px;right:50px;bottom:60px;text-align:center;color:{CRN}">
+<div style="font-size:11px;font-weight:700;letter-spacing:3px;color:{GOLDN}">DAY 1 · AFTER DARK</div>
+<div class="serif it" style="font-size:50px;line-height:1.04;margin:12px 0 12px">The house everyone<br>talks about</div>
+<div style="font-size:15px;line-height:1.5;opacity:.88">Strong, never overpowering. Bundle up and every diffuser is just £9.99.</div>
+<div style="margin-top:20px">{btnN('Shop bundles', GOLDN, N1)}</div></div></div>'''
+
+def heroN_C():
+    return f'''<div style="background:{BGN};padding:40px 30px 36px;position:relative;overflow:hidden;text-align:center">{snow(90,712,'rgba(255,255,255,.35)',2.2,700)}
+<div style="font-size:11px;font-weight:700;letter-spacing:3px;color:{GOLDN};position:relative">DAY 1 · AFTER-WORK TREAT</div>
+<div class="serif it" style="font-size:48px;line-height:1.04;color:{CRN};margin:10px 0 0;position:relative">Pull tonight’s cracker</div>
+<svg width="540" height="300" style="display:block;margin:6px 0 0;position:relative"><g transform="translate(270,150) rotate(-10)">
+<g transform="translate(-24,0)"><path d="M-200 -42 L-130 -42 L-104 -20 L-40 -46 L0 -46 L0 46 L-40 46 L-104 20 L-130 42 L-200 42 L-222 0Z" fill="{RED1}"/>
+{''.join(f'<rect x="{-190+i*36}" y="-46" width="10" height="92" fill="{GOLDN}" opacity=".95"/>' for i in range(5))}</g>
+<g transform="translate(24,0)"><path d="M200 -42 L130 -42 L104 -20 L40 -46 L0 -46 L0 46 L40 46 L104 20 L130 42 L200 42 L222 0Z" fill="{RED1}"/>
+{''.join(f'<rect x="{30+i*36}" y="-46" width="10" height="92" fill="{GOLDN}" opacity=".95"/>' for i in range(5))}</g>
+<g stroke="{GOLDN}" stroke-width="4" stroke-linecap="round"><path d="M-10 -62 L-18 -90"/><path d="M4 -66 L6 -98"/><path d="M16 -60 L30 -86"/><path d="M-10 62 L-20 88"/><path d="M14 62 L26 88"/></g>
+<rect x="-62" y="-26" width="124" height="52" fill="{N1}" stroke="{GOLDN}" stroke-width="3"/><text x="0" y="12" text-anchor="middle" font-family="Cardo" font-style="italic" font-size="32" fill="{GOLDN}">Snap!</text></g></svg>
+<div style="font-size:15px;line-height:1.5;color:{CRN};opacity:.9;position:relative">Every cracker holds a bundle saving – diffusers from £9.99 each. Everyone wins.</div>
+<div style="margin-top:18px;position:relative">{btnN('Pull to reveal')}</div></div>'''
+
+pages['hero_d1_PM_A'] = heroN_A(); pages['hero_d1_PM_B'] = heroN_B(); pages['hero_d1_PM_C'] = heroN_C()
