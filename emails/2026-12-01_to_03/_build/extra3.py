@@ -390,7 +390,7 @@ def box2AM(name, img):
 <div style="display:flex;justify-content:space-between;align-items:center;padding:0 4px 12px">
 <div style="font-size:11px;font-weight:800;letter-spacing:2.5px;color:{K2b}">ALSO TODAY · GIFT BOX DEAL</div>
 <div style="background:{K2};color:{C2};font-size:12px;font-weight:800;letter-spacing:1px;padding:5px 10px">SAVE 37%</div></div>
-<div style="height:400px;background:#fff url({PR(img)}) center 52%/104% no-repeat;border:1px solid #e3d6c4"></div>
+<div style="height:404px;background:#fff url({P(img) if img.endswith('_ai.jpg') else PR(img)}) center/cover no-repeat;border:1px solid #e3d6c4"></div>
 <div style="display:flex;justify-content:space-between;align-items:flex-end;padding:18px 4px 0;gap:16px">
 <div><div class="serif it" style="font-size:30px;line-height:1.05;color:{K2}">Best-Selling Gift Box</div>
 <div style="font-size:12.5px;font-weight:800;letter-spacing:2px;color:{K2b};margin-top:4px">{name.upper()}</div>
@@ -399,7 +399,7 @@ def box2AM(name, img):
 <div style="padding:16px 4px 0">{pill2('Shop the gift box', K2, C2)}</div></div></div>'''
 
 pages['bundle_d2_AM'] = bundle2AM()
-pages['box_d2_AM'] = box2AM('Pure Lavender', 'box_lavender.jpg')
+pages['box_d2_AM'] = box2AM('Pure Lavender', 'box_lavender_ai.jpg')
 pages['deals_d2_AM'] = deals(2, BG2, C2, C2, G2, G2, K2,
     'font-family:Cardo,Georgia,serif;font-style:italic;font-size:54px;line-height:1', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
     'Wild Mint &amp; Sicilian Lemon Reed Diffuser Refill (100ml)', pill2("Shop today’s deal", K2, C2), thumb='refill_wildmint.jpg', stack=True,
