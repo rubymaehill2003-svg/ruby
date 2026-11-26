@@ -492,7 +492,7 @@ def bundle3AM():
 <div style="font-size:60px;font-weight:900;letter-spacing:-2.5px;line-height:.98;color:{R3};margin:8px 0 6px">SAVE UP TO £89.91</div>
 <div class="serif it" style="font-size:24px;color:{G3}">on diffuser bundles – from just £9.99 each</div></div>
 <div style="display:flex;gap:14px;padding:34px 30px 0">{card('3','£21','',G3)}{card('6','£48','',R3)}{card('10','£89.91','just £9.99 each',G3,True)}</div>
-<div style="position:relative;margin:30px 30px 0;height:230px;background:url({P('xmas_boxes.jpg')}) 50% 55%/cover no-repeat;border:6px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.14);transform:rotate(-1deg)"></div>
+<div style="position:relative;margin:30px 30px 0;height:260px;background:url({P('bundle_back.jpg')}) 50% 62%/cover no-repeat;border:6px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.14);transform:rotate(-1deg)"></div>
 <div style="display:flex;justify-content:space-between;gap:10px;padding:24px 30px 0;color:#2A1A17;font-size:13px;font-weight:600">{ticks}</div>
 <div style="text-align:center;margin-top:24px"><div style="display:inline-block;background:{R3};color:#fff;font-weight:800;font-size:15px;letter-spacing:1.8px;padding:18px 46px;border-radius:4px;box-shadow:0 8px 18px rgba(176,30,42,.35)">BUILD MY BUNDLE &amp; SAVE →</div>
 <div style="color:#2A1A17;font-size:12.5px;margin-top:12px"><span style="color:{R3};letter-spacing:2px">★★★★★</span> &nbsp;350,000+ five-star reviews</div></div></div>'''
