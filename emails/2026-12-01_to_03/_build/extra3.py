@@ -475,7 +475,7 @@ def hero3AM(photo, pos, eb, head, sub, link):
 <div style="position:absolute;top:18px;right:18px;width:96px;height:96px;border-radius:50%;background:{R3};color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(8deg);box-shadow:0 6px 16px rgba(0,0,0,.25)">
 <div style="font-size:10px;font-weight:800;letter-spacing:1.5px">FROM</div><div class="serif" style="font-size:30px;font-weight:700;line-height:1">£9.99</div><div style="font-size:9.5px;font-weight:800;letter-spacing:1.5px">EACH</div></div></div></div>'''
 
-def bundle3AM():
+def bundle3AM(bar='TODAY ONLY · BUNDLE &amp; SAVE · ENDS MIDNIGHT', eb='TODAY’S MAIN OFFER', photo='bundle_back.jpg', pos='50% 62%', ph_h=260):
     def card(n, off, note, bg, best=False):
         rib = f'<div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#F2C94C;color:#3a1a12;font-size:10px;font-weight:900;letter-spacing:1.5px;padding:5px 12px;white-space:nowrap;border-radius:3px">★ BEST VALUE ★</div>' if best else ''
         return f'''<div style="position:relative;flex:1;background:{bg};color:#fff;text-align:center;padding:24px 8px 18px;border-radius:6px;{'transform:scale(1.07);box-shadow:0 10px 24px rgba(0,0,0,.22)' if best else 'box-shadow:0 4px 12px rgba(0,0,0,.12)'}">{rib}
@@ -486,13 +486,13 @@ def bundle3AM():
 <div style="font-size:12px;margin-top:8px;font-weight:600;min-height:15px">{note}</div></div>'''
     ticks = ''.join(f'<div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;border-radius:50%;background:{G3};color:#fff;font-size:12px;font-weight:900;display:inline-flex;align-items:center;justify-content:center">✓</span>{t}</div>' for t in ['Mix &amp; match any scents', 'Each lasts up to 12 weeks', 'FREE candle · FREEFLAME'])
     return f'''<div style="background:{C3};padding:0 0 36px;position:relative">
-<div style="background:{R3};color:#fff;text-align:center;font-size:12px;font-weight:800;letter-spacing:3px;padding:11px 0">TODAY ONLY · BUNDLE &amp; SAVE · ENDS MIDNIGHT</div>
+<div style="background:{R3};color:#fff;text-align:center;font-size:12px;font-weight:800;letter-spacing:3px;padding:11px 0">{bar}</div>
 <div style="text-align:center;padding:30px 30px 0">
-<div style="font-size:12px;font-weight:800;letter-spacing:3px;color:{G3}">TODAY’S MAIN OFFER</div>
+<div style="font-size:12px;font-weight:800;letter-spacing:3px;color:{G3}">{eb}</div>
 <div style="font-size:60px;font-weight:900;letter-spacing:-2.5px;line-height:.98;color:{R3};margin:8px 0 6px">SAVE UP TO £89.91</div>
 <div class="serif it" style="font-size:24px;color:{G3}">on diffuser bundles – from just £9.99 each</div></div>
 <div style="display:flex;gap:14px;padding:34px 30px 0">{card('3','£21','',G3)}{card('6','£48','',R3)}{card('10','£89.91','just £9.99 each',G3,True)}</div>
-<div style="position:relative;margin:30px 30px 0;height:260px;background:url({P('bundle_back.jpg')}) 50% 62%/cover no-repeat;border:6px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.14);transform:rotate(-1deg)"></div>
+<div style="position:relative;margin:30px 30px 0;height:{ph_h}px;background:url({P(photo)}) {pos}/cover no-repeat;border:6px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.14);transform:rotate(-1deg)"></div>
 <div style="display:flex;justify-content:space-between;gap:10px;padding:24px 30px 0;color:#2A1A17;font-size:13px;font-weight:600">{ticks}</div>
 <div style="text-align:center;margin-top:24px"><div style="display:inline-block;background:{R3};color:#fff;font-weight:800;font-size:15px;letter-spacing:1.8px;padding:18px 46px;border-radius:4px;box-shadow:0 8px 18px rgba(176,30,42,.35)">BUILD MY BUNDLE &amp; SAVE →</div>
 <div style="color:#2A1A17;font-size:12.5px;margin-top:12px"><span style="color:{R3};letter-spacing:2px">★★★★★</span> &nbsp;350,000+ five-star reviews</div></div></div>'''
@@ -518,4 +518,18 @@ pages['box_d3_AM'] = box3AM('Cardamom &amp; Nutmeg', 'box_cardamom_ai.jpg')
 pages['deals_d3_AM'] = deals(3, R3, C3, '#fff', 'rgba(255,255,255,.85)', G3, '#fff',
     'font-weight:900;font-size:58px;letter-spacing:-2.5px;line-height:.95;text-transform:uppercase', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
     'Bergamot &amp; Lemon Reed Diffuser Refill (100ml)', btn3("Shop today’s deal", G3), thumb='refill_bergamot.jpg', stack=True,
+    price=f'<div style="margin-top:4px"><span style="font-size:26px;font-weight:900;color:{R3}">£10.49</span> <span style="font-size:13px;color:#7d726c">was <s>£17.99</s></span> <span style="display:inline-block;background:{R3};color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;margin-left:4px">42% OFF</span></div>')
+
+# ================= THURSDAY PM upgrades · keep PM's own hero layouts, festive AI photos
+_g = open(f'{S}/build/gen3.py').read()
+def _grab(name):
+    i = _g.index(f'def {name}('); j = _g.index('\ndef ', i + 5); return _g[i:j]
+exec(_grab('tags3').replace("def tags3(", "def tags3PM(").replace("P('p49_candlebox.jpg')}) 62% 66%/cover", "P('ai_thupm_A.jpg')}) 8% 0%/auto 100%"))
+exec(_grab('designer3').replace("def designer3(", "def designer3PM(").replace("P('cover1.jpg')}) 62% 78%/320%", "P('ai_thupm_B.jpg')}) 50% 55%/cover"))
+pages['hero_d3_PM_A'] = tags3PM()
+pages['hero_d3_PM_B'] = designer3PM()
+pages['bundle_d3_PM'] = bundle3AM('FINAL HOURS · BUNDLE &amp; SAVE · ENDS MIDNIGHT', 'TONIGHT’S MAIN OFFER · LAST CHANCE', 'ai_thupm_bundle.jpg', '50% 60%', 280)
+pages['deals_d3_PM'] = deals(3, R3, C3, '#fff', 'rgba(255,255,255,.85)', G3, '#fff',
+    'font-weight:900;font-size:58px;letter-spacing:-2.5px;line-height:.95;text-transform:uppercase', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
+    'Bergamot &amp; Lemon Reed Diffuser Refill (100ml)', btn3("Shop tonight’s deal", G3), thumb='refill_bergamot.jpg', stack=True, tag='FINAL HOURS',
     price=f'<div style="margin-top:4px"><span style="font-size:26px;font-weight:900;color:{R3}">£10.49</span> <span style="font-size:13px;color:#7d726c">was <s>£17.99</s></span> <span style="display:inline-block;background:{R3};color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;margin-left:4px">42% OFF</span></div>')

@@ -33,6 +33,7 @@ HERO_ALT[(3,'AM','B')] = 'The scent that greets you before you’ve even taken y
 HERO_ALT[(3,'AM','A')] = 'Deck the halls (and scent them too). Diffusers from £9.99 each when you bundle. Build my bundle'
 HERO_ALT[(3,'AM','B')] = 'The scent that says welcome home. Bundle one for every room from £9.99 each. Shop bundles'
 HERO_ALT[(3,'AM','C')] = 'Three presents, one is yours – every present hides a bundle saving. Pick my present'
+HERO_ALT[(3,'PM','A')] = 'Last call – free candle with code FREEFLAME, diffusers from £9.99, bundle 10 and save £89.91. Shop bundles'
 HERO_ALT[(3,'PM','C')] = 'Give Christmas a spin – every slice is a bundle saving. Spin now'
 
 TH = {
@@ -153,13 +154,13 @@ def email(day, slot, ver):
     if wpm: t = dict(TH[day], **TH_W)
     sfx = '_PM' if night else ''
     boxname, boxurl = d['box']
-    wam = day == 2 or (day, slot) == (3, 'AM')
+    wam = day in (2, 3)
     if wam: sfx = '_' + slot
     DEALS = [
       '<!-- spacer between gift box and 12 Days section -->',
       f'<tr><td height="24" style="height:24px;font-size:0;line-height:0;background:{t["card"]};">&nbsp;</td></tr>',
       '<!-- 12 DAYS. 12 DEALS. – a new deal every day for the first 12 days of December -->',
-      (imgrow(img('deals_d3_AM'), 'https://valentte.com/organic/bergamot-and-lemon-100ml-diffuser-refill/', "12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 3 – today only: Bergamot & Lemon Reed Diffuser Refill (100ml), now £10.49, was £17.99, 42% off. Shop today’s deal", bg=t['card']) if (day, slot) == (3, 'AM') else
+      (imgrow(img(f'deals_d3_{slot}'), 'https://valentte.com/organic/bergamot-and-lemon-100ml-diffuser-refill/', f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 3 – {'today only' if slot == 'AM' else 'final hours'}: Bergamot & Lemon Reed Diffuser Refill (100ml), now £10.49, was £17.99, 42% off. Shop {'today' if slot == 'AM' else 'tonight'}’s deal", bg=t['card']) if day == 3 else
        imgrow(img(f'deals_d2_{slot}'), 'https://valentte.com/organic/100ml-diffuser-refill-wild-mint-sicilian-lemon/', f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 2 – {'today only' if slot == 'AM' else 'final hours'}: Wild Mint & Sicilian Lemon Reed Diffuser Refill (100ml), now £9.49, was £17.99, 47% off. Shop {'today' if slot == 'AM' else 'tonight'}’s deal", bg=t['card']) if wam else
        imgrow(img('deals_d1_AM'), 'https://valentte.com/organic/customer-favourites-mini-mist-box-of-4/', "12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 1 – today only: Customer Favourites Mini Mist Box of 4, now £7.99, was £13.49, 41% off. Shop today’s deal", bg=t['card']) if (day, slot) == (1, 'AM') else
        imgrow(img(f'deals_d{day}{sfx}'), BUNDLE, f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day {day} – today only: diffuser bundles from £9.99 each plus a FREE {d['item']} with code {d['code']}. Shop today’s deal", bg=t['card'])),
@@ -176,7 +177,7 @@ def email(day, slot, ver):
       '<!-- MAIN OFFER: DIFFUSER BUNDLE (3 / 6 / 10) -->',
       imgrow(img(f'bundle_d{day}{sfx}'), BUNDLE, 'Bundle & save – 3 diffusers save £21, 6 diffusers save £48, 10 diffusers save £89.91, from £9.99 each. Build your bundle', bg=t['card']),
       '<!-- SECONDARY OFFER: GIFT BOX DEAL OF THE DAY -->',
-      imgrow(img(f'box_d{day}{sfx}'), boxurl, f'Also {"tonight" if (wam and slot == "PM") else "today"}: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
+      imgrow(img('box_d3' if (day, slot) == (3, 'PM') else f'box_d{day}{sfx}'), boxurl, f'Also {"tonight" if (wam and slot == "PM" and day == 2) else "today"}: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
       *([] if wam else DEALS),
       '<!-- MORE OFFERS (retail price sheet) -->', tiles_night() if night else tiles_wpm() if wpm else tiles(day),
       '<!-- SOCIAL PROOF -->', proof_night() if night else proof_wpm() if wpm else proof(day),
