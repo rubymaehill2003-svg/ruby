@@ -137,7 +137,7 @@ for slot in ('AM', 'PM'):
     pages[f'gift_d3_{slot}'] = gift_orn(3, slot, 'candle', 'FREEFLAME', 'candle_only.jpg', '50% 45%', 'cover', '#C83440', '#B01E2A', '#5E0C14', 33 + (slot == 'PM'))
 
 # ---------------- "12 Days. 12 Deals." salesy section (per day, own colours)
-def deals(day, bg, panel, ink, acc, hot, hot_fg, head_css, sub_css, today_line, btn, thumb=None, price='', stack=False):
+def deals(day, bg, panel, ink, acc, hot, hot_fg, head_css, sub_css, today_line, btn, thumb=None, price='', stack=False, tag='TODAY ONLY'):
     cells = ''
     for n in range(1, 13):
         if n < day:
@@ -158,7 +158,7 @@ def deals(day, bg, panel, ink, acc, hot, hot_fg, head_css, sub_css, today_line, 
 <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:24px 4px 22px;position:relative">{cells}</div>
 <div style="background:{panel};padding:20px 22px;position:relative;display:flex;gap:18px;align-items:center;justify-content:space-between">
 {f'<div style="width:96px;height:96px;flex:none;background:#fff url({PR(thumb)}) center/cover no-repeat;border:1.5px solid {hot}"></div>' if thumb else ''}
-<div style="flex:1"><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{hot}">DAY {day} · TODAY ONLY</div>
+<div style="flex:1"><div style="font-size:11px;font-weight:800;letter-spacing:2px;color:{hot}">DAY {day} · {tag}</div>
 <div style="font-size:19px;font-weight:800;line-height:1.25;color:#2A1A17;margin-top:4px">{today_line}</div>{price}
 {f'<div style="margin-top:12px">{btn}</div>' if stack else ''}</div>
 {'' if stack else f'<div style="flex:none">{btn}</div>'}</div></div>'''
@@ -363,7 +363,7 @@ pages['gift_d2_AM'] = gift_orn(2, 'AM', 'boxed diffuser', 'FREEDIFF', 'diffuser_
 pages['hero_d2_AM_A'] = moody('ai_festive_A.jpg', '50% 60%', 'cover', 'THE 12 DAYS OF CHRISTMAS · DAY 2', 'Every room, scented<br>for Christmas', 'Diffusers from £9.99 each when you bundle', 'Build your bundle')
 pages['hero_d2_AM_B'] = moody('ai_festive_B.jpg', '50% 62%', 'cover', 'DAY 2 · READY FOR GUESTS?', 'What’s that<br>beautiful smell?', 'From £9.99 a diffuser when you bundle', 'Shop bundles')
 
-def bundle2AM():
+def bundle2AM(bar='★ TODAY ONLY · BUNDLE &amp; SAVE ★', eb='TODAY’S MAIN OFFER', strip='bundle_back.jpg', spos='50% 56%'):
     def card(n, sv, extra, best=False):
         rib = f'<div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:{G2};color:{K2};font-size:10px;font-weight:800;letter-spacing:1.5px;padding:5px 12px;white-space:nowrap">BEST VALUE</div>' if best else ''
         return f'''<div style="position:relative;flex:1;background:{C2 if not best else '#fff'};text-align:center;padding:22px 8px 18px;box-shadow:{'0 0 0 3px '+G2 if best else 'none'};{'transform:scale(1.06)' if best else ''}">{rib}
@@ -373,22 +373,22 @@ def bundle2AM():
 <div style="font-size:12px;color:{K2b};margin-top:8px;font-weight:600;min-height:15px">{extra}</div></div>'''
     ticks = ''.join(f'<div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;border-radius:50%;background:{G2};color:{K2};font-size:12px;font-weight:900;display:inline-flex;align-items:center;justify-content:center">✓</span>{t}</div>' for t in ['Any scents, mix &amp; match', 'Each lasts up to 12 weeks', 'FREE boxed diffuser · FREEDIFF'])
     return f'''<div style="background:{BG2};padding:0 0 36px;position:relative;overflow:hidden">{snow(70,801,'rgba(255,255,255,.3)',2,900)}
-<div style="background:{G2};color:{K2};text-align:center;font-size:12px;font-weight:800;letter-spacing:3px;padding:10px 0;position:relative">★ TODAY ONLY · BUNDLE &amp; SAVE ★</div>
+<div style="background:{G2};color:{K2};text-align:center;font-size:12px;font-weight:800;letter-spacing:3px;padding:10px 0;position:relative">{bar}</div>
 <div style="text-align:center;color:{C2};padding:30px 30px 0;position:relative">
-<div style="font-size:12px;font-weight:700;letter-spacing:3px;color:{G2}">TODAY’S MAIN OFFER</div>
+<div style="font-size:12px;font-weight:700;letter-spacing:3px;color:{G2}">{eb}</div>
 <div class="serif" style="font-size:64px;line-height:.98;font-weight:700;margin:8px 0 6px">Save up to £89.91</div>
 <div class="serif it" style="font-size:24px;color:{G2}">diffusers from just £9.99 each</div></div>
 <div style="display:flex;gap:12px;padding:30px 30px 0;position:relative">{card('3','SAVE £21','')}{card('6','SAVE £48','')}{card('10','SAVE £89.91','just £9.99 each',True)}</div>
-<div style="margin:26px 30px 0;height:230px;background:url({P('bundle_back.jpg')}) 50% 56%/cover no-repeat;box-shadow:0 0 0 2px {G2};position:relative"></div>
+<div style="margin:26px 30px 0;height:230px;background:url({P(strip)}) {spos}/cover no-repeat;box-shadow:0 0 0 2px {G2};position:relative"></div>
 <div style="display:flex;justify-content:space-between;gap:10px;padding:20px 30px 0;color:{C2};font-size:13px;font-weight:600;position:relative">{ticks}</div>
 <div style="text-align:center;margin-top:24px;position:relative"><div style="display:inline-block;background:{G2};color:{K2};font-weight:800;font-size:15px;letter-spacing:1.8px;padding:17px 44px;border-radius:40px;box-shadow:0 8px 20px rgba(0,0,0,.35)">BUILD MY BUNDLE &amp; SAVE →</div>
 <div style="color:{C2};font-size:12.5px;margin-top:12px;opacity:.85"><span style="color:{G2};letter-spacing:2px">★★★★★</span> &nbsp;350,000+ five-star reviews</div></div></div>'''
 
-def box2AM(name, img):
+def box2AM(name, img, eb='ALSO TODAY · GIFT BOX DEAL'):
     return f'''<div style="background:{K2};padding:30px 30px 34px">
 <div style="background:{C2};padding:18px 18px 24px;box-shadow:0 0 0 2px {G2}">
 <div style="display:flex;justify-content:space-between;align-items:center;padding:0 4px 12px">
-<div style="font-size:11px;font-weight:800;letter-spacing:2.5px;color:{K2b}">ALSO TODAY · GIFT BOX DEAL</div>
+<div style="font-size:11px;font-weight:800;letter-spacing:2.5px;color:{K2b}">{eb}</div>
 <div style="background:{K2};color:{C2};font-size:12px;font-weight:800;letter-spacing:1px;padding:5px 10px">SAVE 37%</div></div>
 <div style="height:404px;background:#fff url({P(img) if img.endswith('_ai.jpg') else PR(img)}) center/cover no-repeat;border:1px solid #e3d6c4"></div>
 <div style="display:flex;justify-content:space-between;align-items:flex-end;padding:18px 4px 0;gap:16px">
@@ -403,4 +403,15 @@ pages['box_d2_AM'] = box2AM('Pure Lavender', 'box_lavender_ai.jpg')
 pages['deals_d2_AM'] = deals(2, BG2, C2, C2, G2, G2, K2,
     'font-family:Cardo,Georgia,serif;font-style:italic;font-size:54px;line-height:1', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
     'Wild Mint &amp; Sicilian Lemon Reed Diffuser Refill (100ml)', pill2("Shop today’s deal", K2, C2), thumb='refill_wildmint.jpg', stack=True,
+    price=f'<div style="margin-top:4px"><span class="serif" style="font-size:28px;font-weight:700;color:{K2}">£9.49</span> <span style="font-size:13px;color:#8d7f79">was <s>£17.99</s></span> <span style="display:inline-block;background:{K2};color:{C2};font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;margin-left:4px">47% OFF</span></div>')
+
+# ================= WEDNESDAY PM upgrades (same treatment as AM, evening variants)
+pages['gift_d2_PM'] = gift_orn(2, 'PM', 'boxed diffuser', 'FREEDIFF', 'diffuser_only.jpg', '50% 88%', 'cover', K2b, K2, '#2A0710', 23)
+pages['hero_d2_PM_A'] = moody('ai_festive_PM_A.jpg', '50% 60%', 'cover', 'DAY 2 · FINAL HOURS', 'Cosy nights,<br>beautifully scented', 'Save up to £89.91 · diffusers from £9.99 each', 'Shop bundles')
+pages['hero_d2_PM_B'] = moody('ai_festive_PM_B.jpg', '50% 60%', 'cover', 'DAY 2 · HOSTING THIS CHRISTMAS?', 'Set the table.<br>Scent the room.', 'From £9.99 a diffuser when you bundle', 'Build your bundle')
+pages['bundle_d2_PM'] = bundle2AM('★ FINAL HOURS · BUNDLE &amp; SAVE ★', 'TONIGHT’S MAIN OFFER · ENDS MIDNIGHT', 'xmas_boxes_warm.jpg', '50% 55%')
+pages['box_d2_PM'] = box2AM('Pure Lavender', 'box_lavender_ai.jpg', 'ALSO TONIGHT · GIFT BOX DEAL')
+pages['deals_d2_PM'] = deals(2, BG2, C2, C2, G2, G2, K2,
+    'font-family:Cardo,Georgia,serif;font-style:italic;font-size:54px;line-height:1', 'font-size:15px;line-height:1.5;max-width:470px;margin:0 auto',
+    'Wild Mint &amp; Sicilian Lemon Reed Diffuser Refill (100ml)', pill2("Shop tonight’s deal", K2, C2), thumb='refill_wildmint.jpg', stack=True, tag='FINAL HOURS',
     price=f'<div style="margin-top:4px"><span class="serif" style="font-size:28px;font-weight:700;color:{K2}">£9.49</span> <span style="font-size:13px;color:#8d7f79">was <s>£17.99</s></span> <span style="display:inline-block;background:{K2};color:{C2};font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 7px;margin-left:4px">47% OFF</span></div>')

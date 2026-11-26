@@ -8,7 +8,7 @@
  "gift_d1_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/89113775-482c-4d70-af83-c115dd567030.jpg",
  "gift_d1_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/34caf895-d2ab-4fab-b8c1-0be4b2c67500.jpg",
  "gift_d2_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/de2297cf-6178-4e2a-8d3b-86fdf9ff5339.jpg",
- "gift_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/2e0be602-8ef8-4667-b68b-cb0b3f37a3dd.jpg",
+ "gift_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/6d50705c-74b1-4dd0-9164-e2e5e332688b.jpg",
  "gift_d3_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/5104e0ed-2a4f-49ce-8933-88efb4107e9d.jpg",
  "gift_d3_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/634539f0-4422-4169-a9ed-157a2443bba2.jpg",
  "hero_d1_AM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/18d2c3fa-2c4e-42c0-a0d4-1e97726eb047.jpg",
@@ -20,8 +20,8 @@
  "hero_d2_AM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/a9d28dba-45f9-4c77-b9bf-818405f5c1a2.jpg",
  "hero_d2_AM_B": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/18bcffda-7b8b-49c8-b481-3affb08be86d.jpg",
  "hero_d2_AM_C": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/4ac9d3f9-6eb8-4934-85f1-a72a4714d6ac.jpg",
- "hero_d2_PM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/6e4487d5-9c61-45f9-b93f-44c074baba26.jpg",
- "hero_d2_PM_B": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/046399f4-3f7a-4680-bf00-48e827b87301.jpg",
+ "hero_d2_PM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/9d549de9-85ec-4e43-8cbf-a38e5f824f2b.jpg",
+ "hero_d2_PM_B": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/e3a41d9e-c308-4a64-a450-2d2d4ad4da39.jpg",
  "hero_d2_PM_C": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/90a57758-678b-4554-ab89-bfabbd0b44e5.jpg",
  "hero_d3_AM_A": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/5cc3223a-ea0c-4d0d-b85c-5b384f17f587.jpg",
  "hero_d3_AM_B": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/d5dfc2ab-822f-4977-9754-5e09c49c8e75.jpg",
@@ -41,5 +41,8 @@
  "deals_d1_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/e21022d0-f67b-4904-87a9-8fd7eff6fb4a.jpg",
  "bundle_d2_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/7f99e757-7de7-42a5-b882-8531eb603c15.jpg",
  "box_d2_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/23edfe58-7a5b-4632-a107-9caf7ebf962d.jpg",
- "deals_d2_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/88e9c542-1dd9-48a5-beb8-8e3c112cc643.jpg"
+ "deals_d2_AM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/88e9c542-1dd9-48a5-beb8-8e3c112cc643.jpg",
+ "bundle_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/a9e290a8-cfcd-4fbc-aa49-1f3f4ace2bc0.jpg",
+ "box_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/ea78aefa-77eb-4bf1-a0fe-386cebbf73e3.jpg",
+ "deals_d2_PM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J5VVo50uL70F327Y6AS8CqWwV6/8c5e6edb-aef8-40f1-8a38-15e3ba3dfbb6.jpg"
 }

@@ -26,6 +26,8 @@ HERO_ALT[(2,'AM','B')] = 'What’s that beautiful smell? From £9.99 a diffuser 
 HERO_ALT[(2,'PM','A')] = 'A diffuser for every room. Save up to £89.91, from £9.99 each. Shop now'
 HERO_ALT[(2,'PM','B')] = 'Christmas in every room, all day long. Works 24/7, from £9.99 each when you bundle. Shop now'
 HERO_ALT[(2,'AM','C')] = 'A bundle saving is hiding in the snow – shake to reveal, up to £89.91 off'
+HERO_ALT[(2,'PM','A')] = 'Cosy nights, beautifully scented. Save up to £89.91, diffusers from £9.99 each. Shop bundles'
+HERO_ALT[(2,'PM','B')] = 'Set the table. Scent the room. From £9.99 a diffuser when you bundle. Build your bundle'
 HERO_ALT[(2,'PM','C')] = 'Peel back tonight’s bundle surprise – up to £89.91 off. Peel to reveal'
 HERO_ALT[(3,'AM','B')] = 'The scent that greets you before you’ve even taken your coat off. Bundle one for every room from £9.99 each. Build my bundle'
 HERO_ALT[(3,'AM','C')] = 'Three presents, one is yours – every present hides a bundle saving. Pick my present'
@@ -119,17 +121,17 @@ def email(day, slot, ver):
     if night: t = dict(TH[day], **TH_N)
     sfx = '_PM' if night else ''
     boxname, boxurl = d['box']
-    wam = (day, slot) == (2, 'AM')
-    if wam: sfx = '_AM'
+    wam = day == 2
+    if wam: sfx = '_' + slot
     DEALS = [
       '<!-- spacer between gift box and 12 Days section -->',
       f'<tr><td height="24" style="height:24px;font-size:0;line-height:0;background:{t["card"]};">&nbsp;</td></tr>',
       '<!-- 12 DAYS. 12 DEALS. – a new deal every day for the first 12 days of December -->',
-      (imgrow(img('deals_d2_AM'), 'https://valentte.com/organic/100ml-diffuser-refill-wild-mint-sicilian-lemon/', "12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 2 – today only: Wild Mint & Sicilian Lemon Reed Diffuser Refill (100ml), now £9.49, was £17.99, 47% off. Shop today’s deal", bg=t['card']) if wam else
+      (imgrow(img(f'deals_d2_{slot}'), 'https://valentte.com/organic/100ml-diffuser-refill-wild-mint-sicilian-lemon/', f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 2 – {'today only' if slot == 'AM' else 'final hours'}: Wild Mint & Sicilian Lemon Reed Diffuser Refill (100ml), now £9.49, was £17.99, 47% off. Shop {'today' if slot == 'AM' else 'tonight'}’s deal", bg=t['card']) if wam else
        imgrow(img('deals_d1_AM'), 'https://valentte.com/organic/customer-favourites-mini-mist-box-of-4/', "12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day 1 – today only: Customer Favourites Mini Mist Box of 4, now £7.99, was £13.49, 41% off. Shop today’s deal", bg=t['card']) if (day, slot) == (1, 'AM') else
        imgrow(img(f'deals_d{day}{sfx}'), BUNDLE, f"12 days. 12 deals. A brand-new deal every day for the first 12 days of December, each gone in 24 hours. Day {day} – today only: diffuser bundles from £9.99 each plus a FREE {d['item']} with code {d['code']}. Shop today’s deal", bg=t['card'])),
     ]
-    if wam: DEALS[0] = "<!-- 12 DAYS section moved to the bottom for Wed AM -->"
+    if wam: DEALS[0] = "<!-- 12 DAYS section moved to the bottom for Wednesday -->"
     rows = [
       HEADER,
       f'<!-- 12 DAYS OF CHRISTMAS thin banner (sits on top of the free gift banner) · Day {day} theme: {t["name"]} -->',
@@ -141,7 +143,7 @@ def email(day, slot, ver):
       '<!-- MAIN OFFER: DIFFUSER BUNDLE (3 / 6 / 10) -->',
       imgrow(img(f'bundle_d{day}{sfx}'), BUNDLE, 'Bundle & save – 3 diffusers save £21, 6 diffusers save £48, 10 diffusers save £89.91, from £9.99 each. Build your bundle', bg=t['card']),
       '<!-- SECONDARY OFFER: GIFT BOX DEAL OF THE DAY -->',
-      imgrow(img(f'box_d{day}{sfx}'), boxurl, f'Also today: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
+      imgrow(img(f'box_d{day}{sfx}'), boxurl, f'Also {"tonight" if (wam and slot == "PM") else "today"}: Best-Selling Gift Box – {boxname} – now £23.99, was £37.99. Save 37%. Shop the gift box', bg=t['card']),
       *([] if wam else DEALS),
       '<!-- MORE OFFERS (retail price sheet) -->', tiles_night() if night else tiles(day),
       '<!-- SOCIAL PROOF -->', proof_night() if night else proof(day),
